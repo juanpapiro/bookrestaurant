@@ -1,19 +1,15 @@
 package br.com.bookrestaurant.external.model;
 
-import br.com.bookrestaurant.entity.restaurant.Address;
-import br.com.bookrestaurant.entity.restaurant.OpeningHour;
 import br.com.bookrestaurant.entity.restaurant.RestaurantEntity;
+import br.com.bookrestaurant.entity.restaurant.RestaurantEntityBuilder;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.beans.BeanUtils;
 
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
@@ -31,7 +27,7 @@ public class RestaurantModel {
 
     private String name;
 
-    private String typeOfCusine;
+    private String typeOfCuisine;
 
     private Integer capacity;
 
@@ -49,9 +45,20 @@ public class RestaurantModel {
 
     public RestaurantModel(RestaurantEntity restaurantEntity) {
         this.name = restaurantEntity.getName();
-        this.typeOfCusine = restaurantEntity.getTypeOfCusine();
+        this.typeOfCuisine = restaurantEntity.getTypeOfCuisine();
         this.capacity = restaurantEntity.getCapacity();
         this.dateCreate = LocalDateTime.now();
+    }
+
+    public RestaurantEntity toEntity() {
+        RestaurantEntity entity = new RestaurantEntityBuilder()
+                .addInfos(this.name, this.typeOfCuisine, this.capacity)
+                .build();
+        entity.setId(this.id);
+        entity.setDateCreate(this.dateCreate);
+        entity.setAddress(this.address.toAddress());
+        entity.setOpeningHours(this.openingHours.stream().map(OpeningHourModel::toOpeningHour).toList());
+        return entity;
     }
 
 }

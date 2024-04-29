@@ -1,16 +1,15 @@
 package br.com.bookrestaurant.external.dto;
 
-import br.com.bookrestaurant.entity.restaurant.OpeningHour;
 import br.com.bookrestaurant.entity.restaurant.RestaurantEntity;
 import br.com.bookrestaurant.infraestructure.presenter.restaurant.RestaurantRecord;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.beans.BeanUtils;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -20,6 +19,7 @@ import java.util.UUID;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class RestaurantDto {
 
     private UUID id;
@@ -28,7 +28,7 @@ public class RestaurantDto {
     private String name;
 
     @NotNull
-    private String typeOfCusine;
+    private String typeOfCuisine;
 
     @NotNull
     private Integer capacity;
@@ -43,14 +43,14 @@ public class RestaurantDto {
     private List<OpeningHourDto> openingHours;
 
     public RestaurantRecord toRecord() {
-        return new RestaurantRecord(name, typeOfCusine, capacity);
+        return new RestaurantRecord(name, typeOfCuisine, capacity);
     }
 
 
     public RestaurantDto(RestaurantEntity restaurantEntity) {
         this.id = restaurantEntity.getId();
         this.name = restaurantEntity.getName();
-        this.typeOfCusine = restaurantEntity.getTypeOfCusine();
+        this.typeOfCuisine = restaurantEntity.getTypeOfCuisine();
         this.capacity = restaurantEntity.getCapacity();
         this.dateCreate = restaurantEntity.getDateCreate();
         this.address = new AddressDto(restaurantEntity.getAddress());

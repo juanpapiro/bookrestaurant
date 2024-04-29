@@ -7,6 +7,9 @@ import br.com.bookrestaurant.entity.restaurant.RestaurantEntityBuilder;
 import br.com.bookrestaurant.external.dto.AddressDto;
 import br.com.bookrestaurant.external.dto.OpeningHourDto;
 import br.com.bookrestaurant.external.dto.RestaurantDto;
+import br.com.bookrestaurant.external.model.AddressModel;
+import br.com.bookrestaurant.external.model.OpeningHourModel;
+import br.com.bookrestaurant.external.model.RestaurantModel;
 import br.com.bookrestaurant.infraestructure.presenter.restaurant.AddressRecord;
 import br.com.bookrestaurant.infraestructure.presenter.restaurant.OpeningHourRecord;
 import br.com.bookrestaurant.infraestructure.presenter.restaurant.RestaurantRecord;
@@ -14,11 +17,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
+import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 import java.util.stream.IntStream;
 
 public class Util {
@@ -48,6 +49,37 @@ public class Util {
 
     public static RestaurantEntity buildRestaurantEntity() {
         return new RestaurantEntity("Nome do restaurante", "Italiana", 20);
+    }
+
+    public static RestaurantEntity buildRestaurantEntityForName(String name) {
+        RestaurantEntity restaurantEntity = buildRestaurantEntitySaved();
+        restaurantEntity.setName(name);
+        return restaurantEntity;
+    }
+
+    public static RestaurantEntity buildRestaurantEntityForTypeOfCuisine(String typeOfCuisine) {
+        RestaurantEntity restaurantEntity = buildRestaurantEntitySaved();
+        restaurantEntity.setTypeOfCuisine(typeOfCuisine);
+        return restaurantEntity;
+    }
+
+    public static RestaurantModel buildRestaurantModelForName(String name) {
+        RestaurantModel restaurantModel = new RestaurantModel();
+        restaurantModel.setId(UUID.randomUUID());
+        restaurantModel.setName(name);
+        restaurantModel.setCapacity(20);
+        restaurantModel.setDateCreate(LocalDateTime.now());
+        restaurantModel.setTypeOfCuisine("Italiana");
+        OpeningHourModel openingHourModel = new OpeningHourModel(
+                UUID.randomUUID(), 1, "DOMINGO",LocalTime.of(10,0),
+                LocalTime.of(20,0), restaurantModel);
+        HashSet<OpeningHourModel> openingHourModels = new HashSet<>();
+        openingHourModels.add(openingHourModel);
+        AddressModel addressModel = new AddressModel(UUID.randomUUID(), "Rua Teodoro Sampaio", 100, "Pinheiros",
+                "São Paulo", "SP", "01000-000", restaurantModel);
+        restaurantModel.setAddress(addressModel);
+        restaurantModel.setOpeningHours(openingHourModels);
+        return restaurantModel;
     }
 
     public static RestaurantEntity buildRestaurantEntitySaved() {

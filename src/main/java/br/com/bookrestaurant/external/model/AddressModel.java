@@ -21,7 +21,7 @@ public class AddressModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    private UUID cdAddress;
 
     private String street;
 
@@ -44,6 +44,11 @@ public class AddressModel {
         RestaurantModel restaurantModel = new RestaurantModel();
         restaurantModel.setId(restaurantId);
         this.restaurant = restaurantModel;
+    }
+
+    public Address toAddress() {
+        return new Address(this.street, this.number,
+                this.neighborhood, this.city, this.uf, this.cep);
     }
 
 }

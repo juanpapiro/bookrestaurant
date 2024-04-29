@@ -40,6 +40,24 @@ public class DataBaseJpa implements IDataBase {
     }
 
     @Override
+    public List<RestaurantEntity> findByName(String name) {
+        List<RestaurantModel> restaurantModels = restaurantRepository.findByName(name);
+        return restaurantModels.stream().map(RestaurantModel::toEntity).toList();
+    }
+
+    @Override
+    public List<RestaurantEntity> findByTypeOfCuisine(String typeOfCuisine) {
+        List<RestaurantModel> restaurantModels = restaurantRepository.findByTypeOfCuisine(typeOfCuisine);
+        return restaurantModels.stream().map(RestaurantModel::toEntity).toList();
+    }
+
+    @Override
+    public List<RestaurantEntity> findByLocale(String uf, String city, String neighborhood) {
+        List<RestaurantModel> restaurantModels = restaurantRepository.findByLocale(uf, city, neighborhood);
+        return restaurantModels.stream().map(RestaurantModel::toEntity).toList();
+    }
+
+    @Override
     public Address registerAddress(Address address, UUID restaurantId) {
         AddressModel addressModel = new AddressModel(address, restaurantId);
         addressRepository.save(addressModel);

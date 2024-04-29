@@ -6,6 +6,7 @@ import br.com.bookrestaurant.infraestructure.gateway.impl.restaurant.OpeningHour
 import br.com.bookrestaurant.utilsbytests.Util;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -33,18 +34,22 @@ public class OpeningHourGatewayIT {
     }
 
 
-    @Test
-    void testShouldRegisterOpeningHour() {
-        OpeningHour openingHours = openingHourGateway.registerOpeningHour(
-                Util.buildOpeningHour(), Util.getUUID());
-        assertThat(openingHours).isNotNull().isInstanceOf(OpeningHour.class);
+    @Nested
+    class RegisterRestaurant {
+        @Test
+        void testShouldRegisterOpeningHour() {
+            OpeningHour openingHours = openingHourGateway.registerOpeningHour(
+                    Util.buildOpeningHour(), Util.getUUID());
+            assertThat(openingHours).isNotNull().isInstanceOf(OpeningHour.class);
+        }
+
+        @Test
+        void testShouldRegisterOpeningHours() {
+            List<OpeningHour> openingHours = openingHourGateway.registerOpeningHours(
+                    Util.buildOpeningHours(), Util.getUUID());
+            assertThat(openingHours).isNotNull().asList()
+                    .element(0).isInstanceOf(OpeningHour.class);
+        }
     }
 
-    @Test
-    void testShouldRegisterOpeningHours() {
-        List<OpeningHour> openingHours = openingHourGateway.registerOpeningHours(
-                Util.buildOpeningHours(), Util.getUUID());
-        assertThat(openingHours).isNotNull().asList()
-                .element(0).isInstanceOf(OpeningHour.class);
-    }
 }

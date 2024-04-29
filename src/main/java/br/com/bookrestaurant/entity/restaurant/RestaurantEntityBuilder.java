@@ -9,8 +9,8 @@ public class RestaurantEntityBuilder {
 
     private Optional<RestaurantEntity> restaurantEntity = Optional.ofNullable(null);
 
-    public RestaurantEntityBuilder addInfos(String name, String typeOfCusine, Integer capacity) {
-        this.restaurantEntity = Optional.of(new RestaurantEntity(name, typeOfCusine, capacity));
+    public RestaurantEntityBuilder addInfos(String name, String typeOfCuisine, Integer capacity) {
+        this.restaurantEntity = Optional.of(new RestaurantEntity(name, typeOfCuisine, capacity));
         return this;
     }
 

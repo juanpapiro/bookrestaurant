@@ -10,16 +10,16 @@ public class RestaurantEntity {
 
     private UUID id;
     private String name;
-    private String typeOfCusine;
+    private String typeOfCuisine;
     private Integer capacity;
     private Address address;
     private List<OpeningHour> openingHours;
     private LocalDateTime dateCreate;
 
 
-    public RestaurantEntity(String name, String typeOfCusine, Integer capacity) {
+    public RestaurantEntity(String name, String typeOfCuisine, Integer capacity) {
         this.name = EntityUtil.isNullOrBlank(name, "Nome é obrigatório");
-        this.typeOfCusine = EntityUtil.isNullOrBlank(typeOfCusine, "Tipo de culinária é obrigatório");
+        this.typeOfCuisine = EntityUtil.isNullOrBlank(typeOfCuisine, "Tipo de culinária é obrigatório");
         this.capacity = EntityUtil.isNull(capacity, "Capacidade é obrigatória");
         this.dateCreate = LocalDateTime.now();
     }
@@ -40,12 +40,12 @@ public class RestaurantEntity {
         this.name = name;
     }
 
-    public String getTypeOfCusine() {
-        return typeOfCusine;
+    public String getTypeOfCuisine() {
+        return typeOfCuisine;
     }
 
-    public void setTypeOfCusine(String typeOfCusine) {
-        this.typeOfCusine = typeOfCusine;
+    public void setTypeOfCuisine(String typeOfCuisine) {
+        this.typeOfCuisine = typeOfCuisine;
     }
 
     public Integer getCapacity() {

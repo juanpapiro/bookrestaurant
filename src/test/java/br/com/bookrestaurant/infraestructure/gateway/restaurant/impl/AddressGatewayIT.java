@@ -6,6 +6,7 @@ import br.com.bookrestaurant.infraestructure.gateway.impl.restaurant.AddressGate
 import br.com.bookrestaurant.utilsbytests.Util;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -30,10 +31,14 @@ class AddressGatewayIT {
         addressGateway = new AddressGateway(dataBaseJpa);
     }
 
-    @Test
-    void testShouldRegisterAddress() {
-        Address address = addressGateway.registerAddress(Util.buildAddres(), Util.getUUID());
-        assertThat(address).isNotNull().isInstanceOf(Address.class);
+
+    @Nested
+    class RegisterRestaurant {
+        @Test
+        void testShouldRegisterAddress() {
+            Address address = addressGateway.registerAddress(Util.buildAddres(), Util.getUUID());
+            assertThat(address).isNotNull().isInstanceOf(Address.class);
+        }
     }
 
 }

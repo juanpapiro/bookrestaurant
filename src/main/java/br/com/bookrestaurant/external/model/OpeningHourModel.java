@@ -22,7 +22,7 @@ public class OpeningHourModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    private UUID cdOpeningHour;
 
     private Integer dayOfTheWeekCode;
 
@@ -43,6 +43,10 @@ public class OpeningHourModel {
         RestaurantModel restaurantModel = new RestaurantModel();
         restaurantModel.setId(restaurantId);
         this.restaurant = restaurantModel;
+    }
+
+    public OpeningHour toOpeningHour() {
+        return new OpeningHour(this.dayOfTheWeekCode, this.hourOpen, this.hourClose);
     }
 
 }

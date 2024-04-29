@@ -2,6 +2,7 @@ package br.com.bookrestaurant.external.dto;
 
 import br.com.bookrestaurant.entity.restaurant.Address;
 import br.com.bookrestaurant.infraestructure.presenter.restaurant.AddressRecord;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,6 +16,7 @@ import java.util.UUID;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class AddressDto {
 
     private UUID id;

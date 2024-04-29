@@ -7,6 +7,7 @@ import br.com.bookrestaurant.infraestructure.gateway.interfaces.restaurant.IData
 import br.com.bookrestaurant.utilsbytests.Util;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -38,23 +39,25 @@ class OpeningHourGatewayTest {
         mocks.close();
     }
 
+    @Nested
+    class RegisterRestaurant {
+        @Test
+        void testShouldRegisterOpeningHour() {
+            openingHourGateway.registerOpeningHour(
+                    Util.buildOpeningHour(), Util.getUUID());
+            verify(dataBase, times(1))
+                    .registerOpeningHour(Mockito.any(OpeningHour.class),
+                            Mockito.any(UUID.class));
+        }
 
-    @Test
-    void testShouldRegisterOpeningHour() {
-        openingHourGateway.registerOpeningHour(
-                Util.buildOpeningHour(), Util.getUUID());
-        verify(dataBase, times(1))
-                .registerOpeningHour(Mockito.any(OpeningHour.class),
-                        Mockito.any(UUID.class));
-    }
-
-    @Test
-    void testShouldRegisterOpeningHours() {
-        openingHourGateway.registerOpeningHours(
-                Util.buildOpeningHours(), Util.getUUID());
-        verify(dataBase, times(1))
-                .registerOpeningHours(Mockito.anyList(),
-                        Mockito.any(UUID.class));
+        @Test
+        void testShouldRegisterOpeningHours() {
+            openingHourGateway.registerOpeningHours(
+                    Util.buildOpeningHours(), Util.getUUID());
+            verify(dataBase, times(1))
+                    .registerOpeningHours(Mockito.anyList(),
+                            Mockito.any(UUID.class));
+        }
     }
 
 }

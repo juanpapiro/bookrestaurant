@@ -6,6 +6,7 @@ import br.com.bookrestaurant.infraestructure.gateway.interfaces.restaurant.IData
 import br.com.bookrestaurant.utilsbytests.Util;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -37,12 +38,15 @@ public class AddressGatewayTest {
         mocks.close();
     }
 
-    @Test
-    void testShouldRegisterAddress() {
-        addressGateway.registerAddress(Util.buildAddres(), Util.getUUID());
-        verify(dataBase, times(1))
-                .registerAddress(Mockito.any(Address.class),
-                        Mockito.any(UUID.class));
+    @Nested
+    class RegisterRestaurant {
+        @Test
+        void testShouldRegisterAddress() {
+            addressGateway.registerAddress(Util.buildAddres(), Util.getUUID());
+            verify(dataBase, times(1))
+                    .registerAddress(Mockito.any(Address.class),
+                            Mockito.any(UUID.class));
+        }
     }
 
 }

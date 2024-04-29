@@ -16,7 +16,7 @@ public class RestaurantEntityTest {
         RestaurantEntity restaurantEntity = Util.buildRestaurantEntity();
         assertThat(restaurantEntity).isNotNull().isInstanceOf(RestaurantEntity.class);
         assertThat(restaurantEntity.getName()).isNotNull().isEqualTo("Nome do restaurante");
-        assertThat(restaurantEntity.getTypeOfCusine()).isNotNull().isEqualTo("Italiana");
+        assertThat(restaurantEntity.getTypeOfCuisine()).isNotNull().isEqualTo("Italiana");
         assertThat(restaurantEntity.getCapacity()).isNotNull().isEqualTo(20);
         assertThat(restaurantEntity.getDateCreate()).isNotNull().isInstanceOf(LocalDateTime.class);
 //        assertThat(restaurantEntity.getAddress()).isNotNull().isInstanceOf(Address.class);

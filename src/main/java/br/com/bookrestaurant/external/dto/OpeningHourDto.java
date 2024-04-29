@@ -4,6 +4,7 @@ import br.com.bookrestaurant.entity.restaurant.OpeningHour;
 import br.com.bookrestaurant.external.model.RestaurantModel;
 import br.com.bookrestaurant.infraestructure.presenter.restaurant.OpeningHourRecord;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotNull;
@@ -20,6 +21,7 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class OpeningHourDto {
 
     private UUID id;
