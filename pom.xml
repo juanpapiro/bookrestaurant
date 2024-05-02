@@ -128,7 +128,17 @@
             <artifactId>allure-rest-assured</artifactId>
             <version>2.26.0</version>
         </dependency>
-
+        <!-- TESTE DE PERFORMANCE -->
+        <dependency>
+            <groupId>io.gatling</groupId>
+            <artifactId>gatling-app</artifactId>
+            <version>3.10.5</version>
+        </dependency>
+        <dependency>
+            <groupId>io.gatling.highcharts</groupId>
+            <artifactId>gatling-charts-highcharts</artifactId>
+            <version>3.10.5</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -211,6 +221,21 @@
                             </includes>
                             <excludes combine.self="override">
                             </excludes>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>performance-test</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>io.gatling</groupId>
+                        <artifactId>gatling-maven-plugin</artifactId>
+                        <version>4.8.2</version>
+                        <configuration>
+                            <simulationClass>br.com.bookrestaurant.performance.PerformSimulation</simulationClass>
                         </configuration>
                     </plugin>
                 </plugins>

@@ -25,6 +25,7 @@ br\com\bookrestaurant\external\db\DataBaseJpaIT$FindRestaurant.class
 br\com\bookrestaurant\infraestructure\gateway\restaurant\impl\OpeningHourGatewayIT$RegisterRestaurant.class
 br\com\bookrestaurant\usecase\restaurant\RestaurantUseCaseTest$FindRestaurant.class
 br\com\bookrestaurant\infraestructure\gateway\restaurant\impl\RestaurantGatewayTest.class
+br\com\bookrestaurant\performance\PerformSimulation.class
 br\com\bookrestaurant\external\api\RestaurantApiControllerIT$FindRestaurant.class
 br\com\bookrestaurant\external\api\RestaurantApiControllerTest$RegisterRestaurant.class
 br\com\bookrestaurant\external\api\RestaurantApiControllerIT.class

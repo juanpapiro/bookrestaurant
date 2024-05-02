@@ -9,11 +9,18 @@ integration-test:
 
 test: unit-test integration-test
 
-system-test: start-app-docker
+system-test:
+	@echo "iniciando teste de integração"
+	@mvn test -P sys-test
+
+start-app-system-test: start-app-docker
 	@echo "iniciando teste de integração"
 	@mvn test -P sys-test
 	@echo "finalizando containers"
 	@make stop-app-docker
+
+performance-test:
+	mvn gatling:test -P performance-test
 
 start-db:
 	docker-compose -f docker-compose-db.yml up -d
@@ -37,3 +44,6 @@ start-app-docker: docker-build
 
 stop-app-docker:
 	docker-compose -f docker-compose-app.yml down
+
+allure-start:
+	allure serve target/allure-results

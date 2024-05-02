@@ -1,0 +1,932 @@
+ASSERTION	AAEDAAECAwAAAAAAAECfQA==
+RUN	br.com.bookrestaurant.performance.PerformSimulation	performsimulation	1714647987062	 	3.10.5
+USER	Registrar novo restaurante	START	1714647988757
+REQUEST		registrar novo restaurante	1714647988728	1714647988782	OK	 
+USER	Registrar novo restaurante	END	1714647988902
+USER	Registrar novo restaurante	START	1714647989649
+REQUEST		registrar novo restaurante	1714647989648	1714647989659	OK	 
+USER	Registrar novo restaurante	END	1714647989660
+USER	Registrar novo restaurante	START	1714647990149
+REQUEST		registrar novo restaurante	1714647990148	1714647990160	OK	 
+USER	Registrar novo restaurante	END	1714647990161
+USER	Registrar novo restaurante	START	1714647990654
+REQUEST		registrar novo restaurante	1714647990653	1714647990664	OK	 
+USER	Registrar novo restaurante	END	1714647990665
+USER	Registrar novo restaurante	START	1714647990892
+REQUEST		registrar novo restaurante	1714647990892	1714647990901	OK	 
+USER	Registrar novo restaurante	END	1714647990902
+USER	Registrar novo restaurante	START	1714647991145
+REQUEST		registrar novo restaurante	1714647991145	1714647991155	OK	 
+USER	Registrar novo restaurante	END	1714647991156
+USER	Registrar novo restaurante	START	1714647991397
+REQUEST		registrar novo restaurante	1714647991396	1714647991407	OK	 
+USER	Registrar novo restaurante	END	1714647991408
+USER	Registrar novo restaurante	START	1714647991649
+REQUEST		registrar novo restaurante	1714647991647	1714647991661	OK	 
+USER	Registrar novo restaurante	END	1714647991662
+USER	Registrar novo restaurante	START	1714647991894
+REQUEST		registrar novo restaurante	1714647991893	1714647991905	OK	 
+USER	Registrar novo restaurante	END	1714647991906
+USER	Registrar novo restaurante	START	1714647992141
+REQUEST		registrar novo restaurante	1714647992140	1714647992153	OK	 
+USER	Registrar novo restaurante	END	1714647992154
+USER	Registrar novo restaurante	START	1714647992389
+REQUEST		registrar novo restaurante	1714647992388	1714647992403	OK	 
+USER	Registrar novo restaurante	END	1714647992404
+USER	Registrar novo restaurante	START	1714647992637
+REQUEST		registrar novo restaurante	1714647992636	1714647992649	OK	 
+USER	Registrar novo restaurante	END	1714647992650
+USER	Registrar novo restaurante	START	1714647992850
+REQUEST		registrar novo restaurante	1714647992849	1714647992862	OK	 
+USER	Registrar novo restaurante	END	1714647992863
+USER	Registrar novo restaurante	START	1714647993040
+REQUEST		registrar novo restaurante	1714647993038	1714647993051	OK	 
+USER	Registrar novo restaurante	END	1714647993052
+USER	Registrar novo restaurante	START	1714647993242
+REQUEST		registrar novo restaurante	1714647993240	1714647993250	OK	 
+USER	Registrar novo restaurante	END	1714647993251
+USER	Registrar novo restaurante	START	1714647993443
+REQUEST		registrar novo restaurante	1714647993442	1714647993449	OK	 
+USER	Registrar novo restaurante	END	1714647993450
+USER	Registrar novo restaurante	START	1714647993644
+REQUEST		registrar novo restaurante	1714647993644	1714647993652	OK	 
+USER	Registrar novo restaurante	END	1714647993653
+USER	Registrar novo restaurante	START	1714647993815
+REQUEST		registrar novo restaurante	1714647993815	1714647993824	OK	 
+USER	Registrar novo restaurante	END	1714647993825
+USER	Registrar novo restaurante	START	1714647993972
+REQUEST		registrar novo restaurante	1714647993971	1714647993980	OK	 
+USER	Registrar novo restaurante	END	1714647993981
+USER	Registrar novo restaurante	START	1714647994144
+REQUEST		registrar novo restaurante	1714647994144	1714647994151	OK	 
+USER	Registrar novo restaurante	END	1714647994152
+USER	Registrar novo restaurante	START	1714647994315
+REQUEST		registrar novo restaurante	1714647994314	1714647994327	OK	 
+USER	Registrar novo restaurante	END	1714647994328
+USER	Registrar novo restaurante	START	1714647994472
+REQUEST		registrar novo restaurante	1714647994471	1714647994481	OK	 
+USER	Registrar novo restaurante	END	1714647994482
+USER	Registrar novo restaurante	START	1714647994646
+REQUEST		registrar novo restaurante	1714647994646	1714647994654	OK	 
+USER	Registrar novo restaurante	END	1714647994655
+USER	Registrar novo restaurante	START	1714647994782
+REQUEST		registrar novo restaurante	1714647994781	1714647994794	OK	 
+USER	Registrar novo restaurante	END	1714647994795
+USER	Registrar novo restaurante	START	1714647994922
+REQUEST		registrar novo restaurante	1714647994921	1714647994931	OK	 
+USER	Registrar novo restaurante	END	1714647994932
+USER	Registrar novo restaurante	START	1714647995076
+REQUEST		registrar novo restaurante	1714647995076	1714647995084	OK	 
+USER	Registrar novo restaurante	END	1714647995085
+USER	Registrar novo restaurante	START	1714647995218
+REQUEST		registrar novo restaurante	1714647995217	1714647995227	OK	 
+USER	Registrar novo restaurante	END	1714647995228
+USER	Registrar novo restaurante	START	1714647995357
+REQUEST		registrar novo restaurante	1714647995356	1714647995367	OK	 
+USER	Registrar novo restaurante	END	1714647995368
+USER	Registrar novo restaurante	START	1714647995496
+REQUEST		registrar novo restaurante	1714647995495	1714647995503	OK	 
+USER	Registrar novo restaurante	END	1714647995504
+USER	Registrar novo restaurante	START	1714647995638
+REQUEST		registrar novo restaurante	1714647995637	1714647995648	OK	 
+USER	Registrar novo restaurante	END	1714647995649
+USER	Registrar novo restaurante	START	1714647995791
+REQUEST		registrar novo restaurante	1714647995790	1714647995799	OK	 
+USER	Registrar novo restaurante	END	1714647995800
+USER	Registrar novo restaurante	START	1714647995931
+REQUEST		registrar novo restaurante	1714647995930	1714647995940	OK	 
+USER	Registrar novo restaurante	END	1714647995941
+USER	Registrar novo restaurante	START	1714647996071
+REQUEST		registrar novo restaurante	1714647996070	1714647996081	OK	 
+USER	Registrar novo restaurante	END	1714647996082
+USER	Registrar novo restaurante	START	1714647996210
+REQUEST		registrar novo restaurante	1714647996209	1714647996217	OK	 
+USER	Registrar novo restaurante	END	1714647996218
+USER	Registrar novo restaurante	START	1714647996350
+REQUEST		registrar novo restaurante	1714647996349	1714647996359	OK	 
+USER	Registrar novo restaurante	END	1714647996360
+USER	Registrar novo restaurante	START	1714647996505
+REQUEST		registrar novo restaurante	1714647996504	1714647996511	OK	 
+USER	Registrar novo restaurante	END	1714647996512
+USER	Registrar novo restaurante	START	1714647996645
+REQUEST		registrar novo restaurante	1714647996644	1714647996654	OK	 
+USER	Registrar novo restaurante	END	1714647996655
+USER	Registrar novo restaurante	START	1714647996753
+REQUEST		registrar novo restaurante	1714647996753	1714647996761	OK	 
+USER	Registrar novo restaurante	END	1714647996761
+USER	Registrar novo restaurante	START	1714647996862
+REQUEST		registrar novo restaurante	1714647996862	1714647996868	OK	 
+USER	Registrar novo restaurante	END	1714647996869
+USER	Registrar novo restaurante	START	1714647996971
+REQUEST		registrar novo restaurante	1714647996971	1714647996978	OK	 
+USER	Registrar novo restaurante	END	1714647996979
+USER	Registrar novo restaurante	START	1714647997083
+REQUEST		registrar novo restaurante	1714647997082	1714647997091	OK	 
+USER	Registrar novo restaurante	END	1714647997092
+USER	Registrar novo restaurante	START	1714647997192
+REQUEST		registrar novo restaurante	1714647997191	1714647997202	OK	 
+USER	Registrar novo restaurante	END	1714647997203
+USER	Registrar novo restaurante	START	1714647997315
+REQUEST		registrar novo restaurante	1714647997315	1714647997322	OK	 
+USER	Registrar novo restaurante	END	1714647997323
+USER	Registrar novo restaurante	START	1714647997425
+REQUEST		registrar novo restaurante	1714647997424	1714647997434	OK	 
+USER	Registrar novo restaurante	END	1714647997435
+USER	Registrar novo restaurante	START	1714647997533
+REQUEST		registrar novo restaurante	1714647997533	1714647997541	OK	 
+USER	Registrar novo restaurante	END	1714647997543
+USER	Registrar novo restaurante	START	1714647997646
+REQUEST		registrar novo restaurante	1714647997646	1714647997655	OK	 
+USER	Registrar novo restaurante	END	1714647997656
+USER	Registrar novo restaurante	START	1714647997737
+REQUEST		registrar novo restaurante	1714647997736	1714647997746	OK	 
+USER	Registrar novo restaurante	END	1714647997747
+USER	Registrar novo restaurante	START	1714647997845
+REQUEST		registrar novo restaurante	1714647997845	1714647997853	OK	 
+USER	Registrar novo restaurante	END	1714647997854
+USER	Registrar novo restaurante	START	1714647997940
+REQUEST		registrar novo restaurante	1714647997939	1714647997949	OK	 
+USER	Registrar novo restaurante	END	1714647997950
+USER	Registrar novo restaurante	START	1714647998048
+REQUEST		registrar novo restaurante	1714647998047	1714647998056	OK	 
+USER	Registrar novo restaurante	END	1714647998056
+USER	Registrar novo restaurante	START	1714647998142
+REQUEST		registrar novo restaurante	1714647998141	1714647998149	OK	 
+USER	Registrar novo restaurante	END	1714647998150
+USER	Registrar novo restaurante	START	1714647998237
+REQUEST		registrar novo restaurante	1714647998236	1714647998247	OK	 
+USER	Registrar novo restaurante	END	1714647998248
+USER	Registrar novo restaurante	START	1714647998343
+REQUEST		registrar novo restaurante	1714647998343	1714647998352	OK	 
+USER	Registrar novo restaurante	END	1714647998353
+USER	Registrar novo restaurante	START	1714647998437
+REQUEST		registrar novo restaurante	1714647998436	1714647998447	OK	 
+USER	Registrar novo restaurante	END	1714647998448
+USER	Registrar novo restaurante	START	1714647998547
+REQUEST		registrar novo restaurante	1714647998546	1714647998556	OK	 
+USER	Registrar novo restaurante	END	1714647998557
+USER	Registrar novo restaurante	START	1714647998640
+REQUEST		registrar novo restaurante	1714647998639	1714647998651	OK	 
+USER	Registrar novo restaurante	END	1714647998652
+USER	Registrar novo restaurante	START	1714647998750
+REQUEST		registrar novo restaurante	1714647998749	1714647998761	OK	 
+USER	Registrar novo restaurante	END	1714647998762
+USER	Registrar novo restaurante	START	1714647998843
+REQUEST		registrar novo restaurante	1714647998843	1714647998855	OK	 
+USER	Registrar novo restaurante	END	1714647998857
+USER	Registrar novo restaurante	START	1714647998938
+REQUEST		registrar novo restaurante	1714647998937	1714647998950	OK	 
+USER	Registrar novo restaurante	END	1714647998952
+USER	Registrar novo restaurante	START	1714647999048
+REQUEST		registrar novo restaurante	1714647999047	1714647999059	OK	 
+USER	Registrar novo restaurante	END	1714647999060
+USER	Registrar novo restaurante	START	1714647999144
+REQUEST		registrar novo restaurante	1714647999143	1714647999157	OK	 
+USER	Registrar novo restaurante	END	1714647999159
+USER	Registrar novo restaurante	START	1714647999236
+REQUEST		registrar novo restaurante	1714647999235	1714647999248	OK	 
+USER	Registrar novo restaurante	END	1714647999249
+USER	Registrar novo restaurante	START	1714647999344
+REQUEST		registrar novo restaurante	1714647999343	1714647999358	OK	 
+USER	Registrar novo restaurante	END	1714647999360
+USER	Registrar novo restaurante	START	1714647999435
+REQUEST		registrar novo restaurante	1714647999434	1714647999448	OK	 
+USER	Registrar novo restaurante	END	1714647999450
+USER	Registrar novo restaurante	START	1714647999545
+REQUEST		registrar novo restaurante	1714647999544	1714647999559	OK	 
+USER	Registrar novo restaurante	END	1714647999561
+USER	Registrar novo restaurante	START	1714647999637
+REQUEST		registrar novo restaurante	1714647999636	1714647999652	OK	 
+USER	Registrar novo restaurante	END	1714647999653
+USER	Registrar novo restaurante	START	1714647999746
+REQUEST		registrar novo restaurante	1714647999745	1714647999762	OK	 
+USER	Registrar novo restaurante	END	1714647999764
+USER	Registrar novo restaurante	START	1714647999839
+REQUEST		registrar novo restaurante	1714647999838	1714647999873	OK	 
+USER	Registrar novo restaurante	END	1714647999875
+USER	Registrar novo restaurante	START	1714647999949
+REQUEST		registrar novo restaurante	1714647999948	1714647999985	OK	 
+USER	Registrar novo restaurante	END	1714647999987
+USER	Registrar novo restaurante	START	1714648000043
+REQUEST		registrar novo restaurante	1714648000040	1714648000074	OK	 
+USER	Registrar novo restaurante	END	1714648000076
+USER	Registrar novo restaurante	START	1714648000150
+REQUEST		registrar novo restaurante	1714648000149	1714648000169	OK	 
+USER	Registrar novo restaurante	END	1714648000171
+USER	Registrar novo restaurante	START	1714648000243
+REQUEST		registrar novo restaurante	1714648000242	1714648000270	OK	 
+USER	Registrar novo restaurante	END	1714648000272
+USER	Registrar novo restaurante	START	1714648000335
+REQUEST		registrar novo restaurante	1714648000334	1714648000359	OK	 
+USER	Registrar novo restaurante	END	1714648000361
+USER	Registrar novo restaurante	START	1714648000442
+REQUEST		registrar novo restaurante	1714648000441	1714648000466	OK	 
+USER	Registrar novo restaurante	END	1714648000468
+USER	Registrar novo restaurante	START	1714648000551
+REQUEST		registrar novo restaurante	1714648000550	1714648000569	OK	 
+USER	Registrar novo restaurante	END	1714648000571
+USER	Registrar novo restaurante	START	1714648000648
+REQUEST		registrar novo restaurante	1714648000646	1714648000670	OK	 
+USER	Registrar novo restaurante	END	1714648000673
+USER	Registrar novo restaurante	START	1714648000737
+REQUEST		registrar novo restaurante	1714648000736	1714648000756	OK	 
+USER	Registrar novo restaurante	END	1714648000759
+USER	Registrar novo restaurante	START	1714648000848
+REQUEST		registrar novo restaurante	1714648000846	1714648000872	OK	 
+USER	Registrar novo restaurante	END	1714648000874
+USER	Registrar novo restaurante	START	1714648000940
+REQUEST		registrar novo restaurante	1714648000939	1714648000961	OK	 
+USER	Registrar novo restaurante	END	1714648000963
+USER	Registrar novo restaurante	START	1714648001049
+REQUEST		registrar novo restaurante	1714648001048	1714648001070	OK	 
+USER	Registrar novo restaurante	END	1714648001072
+USER	Registrar novo restaurante	START	1714648001142
+REQUEST		registrar novo restaurante	1714648001141	1714648001163	OK	 
+USER	Registrar novo restaurante	END	1714648001166
+USER	Registrar novo restaurante	START	1714648001249
+REQUEST		registrar novo restaurante	1714648001248	1714648001269	OK	 
+USER	Registrar novo restaurante	END	1714648001271
+USER	Registrar novo restaurante	START	1714648001344
+REQUEST		registrar novo restaurante	1714648001342	1714648001369	OK	 
+USER	Registrar novo restaurante	END	1714648001372
+USER	Registrar novo restaurante	START	1714648001438
+REQUEST		registrar novo restaurante	1714648001436	1714648001464	OK	 
+USER	Registrar novo restaurante	END	1714648001466
+USER	Registrar novo restaurante	START	1714648001547
+REQUEST		registrar novo restaurante	1714648001546	1714648001583	OK	 
+USER	Registrar novo restaurante	END	1714648001586
+USER	Registrar novo restaurante	START	1714648001639
+REQUEST		registrar novo restaurante	1714648001637	1714648001712	OK	 
+USER	Registrar novo restaurante	END	1714648001717
+USER	Registrar novo restaurante	START	1714648001748
+REQUEST		registrar novo restaurante	1714648001745	1714648001816	OK	 
+USER	Registrar novo restaurante	END	1714648001819
+USER	Registrar novo restaurante	START	1714648001840
+REQUEST		registrar novo restaurante	1714648001838	1714648001878	OK	 
+USER	Registrar novo restaurante	END	1714648001881
+USER	Registrar novo restaurante	START	1714648001958
+REQUEST		registrar novo restaurante	1714648001953	1714648002020	OK	 
+USER	Registrar novo restaurante	END	1714648002023
+USER	Registrar novo restaurante	START	1714648002042
+REQUEST		registrar novo restaurante	1714648002041	1714648002084	OK	 
+USER	Registrar novo restaurante	END	1714648002088
+USER	Registrar novo restaurante	START	1714648002152
+USER	Registrar novo restaurante	START	1714648002258
+REQUEST		registrar novo restaurante	1714648002150	1714648002277	OK	 
+USER	Registrar novo restaurante	END	1714648002280
+REQUEST		registrar novo restaurante	1714648002256	1714648002304	OK	 
+USER	Registrar novo restaurante	END	1714648002307
+USER	Registrar novo restaurante	START	1714648002352
+REQUEST		registrar novo restaurante	1714648002351	1714648002379	OK	 
+USER	Registrar novo restaurante	END	1714648002381
+USER	Registrar novo restaurante	START	1714648002444
+REQUEST		registrar novo restaurante	1714648002442	1714648002468	OK	 
+USER	Registrar novo restaurante	END	1714648002471
+USER	Registrar novo restaurante	START	1714648002537
+REQUEST		registrar novo restaurante	1714648002536	1714648002564	OK	 
+USER	Registrar novo restaurante	END	1714648002566
+USER	Registrar novo restaurante	START	1714648002647
+REQUEST		registrar novo restaurante	1714648002645	1714648002671	OK	 
+USER	Registrar novo restaurante	END	1714648002674
+USER	Registrar novo restaurante	START	1714648002739
+REQUEST		registrar novo restaurante	1714648002738	1714648002762	OK	 
+USER	Registrar novo restaurante	END	1714648002764
+USER	Registrar novo restaurante	START	1714648002848
+REQUEST		registrar novo restaurante	1714648002847	1714648002874	OK	 
+USER	Registrar novo restaurante	END	1714648002877
+USER	Registrar novo restaurante	START	1714648002940
+REQUEST		registrar novo restaurante	1714648002939	1714648002962	OK	 
+USER	Registrar novo restaurante	END	1714648002964
+USER	Registrar novo restaurante	START	1714648003049
+REQUEST		registrar novo restaurante	1714648003048	1714648003076	OK	 
+USER	Registrar novo restaurante	END	1714648003078
+USER	Registrar novo restaurante	START	1714648003141
+REQUEST		registrar novo restaurante	1714648003140	1714648003163	OK	 
+USER	Registrar novo restaurante	END	1714648003165
+USER	Registrar novo restaurante	START	1714648003235
+REQUEST		registrar novo restaurante	1714648003234	1714648003255	OK	 
+USER	Registrar novo restaurante	END	1714648003257
+USER	Registrar novo restaurante	START	1714648003343
+REQUEST		registrar novo restaurante	1714648003342	1714648003373	OK	 
+USER	Registrar novo restaurante	END	1714648003375
+USER	Registrar novo restaurante	START	1714648003436
+REQUEST		registrar novo restaurante	1714648003435	1714648003471	OK	 
+USER	Registrar novo restaurante	END	1714648003473
+USER	Registrar novo restaurante	START	1714648003544
+REQUEST		registrar novo restaurante	1714648003543	1714648003566	OK	 
+USER	Registrar novo restaurante	END	1714648003568
+USER	Registrar novo restaurante	START	1714648003653
+REQUEST		registrar novo restaurante	1714648003652	1714648003681	OK	 
+USER	Registrar novo restaurante	END	1714648003683
+USER	Registrar novo restaurante	START	1714648003746
+REQUEST		registrar novo restaurante	1714648003744	1714648003765	OK	 
+USER	Registrar novo restaurante	END	1714648003768
+USER	Registrar novo restaurante	START	1714648003837
+REQUEST		registrar novo restaurante	1714648003836	1714648003858	OK	 
+USER	Registrar novo restaurante	END	1714648003860
+USER	Registrar novo restaurante	START	1714648003946
+REQUEST		registrar novo restaurante	1714648003945	1714648003967	OK	 
+USER	Registrar novo restaurante	END	1714648003969
+USER	Registrar novo restaurante	START	1714648004038
+REQUEST		registrar novo restaurante	1714648004036	1714648004057	OK	 
+USER	Registrar novo restaurante	END	1714648004058
+USER	Registrar novo restaurante	START	1714648004145
+REQUEST		registrar novo restaurante	1714648004143	1714648004162	OK	 
+USER	Registrar novo restaurante	END	1714648004164
+USER	Registrar novo restaurante	START	1714648004238
+REQUEST		registrar novo restaurante	1714648004237	1714648004255	OK	 
+USER	Registrar novo restaurante	END	1714648004257
+USER	Registrar novo restaurante	START	1714648004347
+REQUEST		registrar novo restaurante	1714648004346	1714648004365	OK	 
+USER	Registrar novo restaurante	END	1714648004366
+USER	Registrar novo restaurante	START	1714648004440
+REQUEST		registrar novo restaurante	1714648004439	1714648004458	OK	 
+USER	Registrar novo restaurante	END	1714648004459
+USER	Registrar novo restaurante	START	1714648004550
+REQUEST		registrar novo restaurante	1714648004549	1714648004566	OK	 
+USER	Registrar novo restaurante	END	1714648004568
+USER	Registrar novo restaurante	START	1714648004644
+REQUEST		registrar novo restaurante	1714648004643	1714648004661	OK	 
+USER	Registrar novo restaurante	END	1714648004663
+USER	Registrar novo restaurante	START	1714648004736
+REQUEST		registrar novo restaurante	1714648004735	1714648004753	OK	 
+USER	Registrar novo restaurante	END	1714648004755
+USER	Registrar novo restaurante	START	1714648004846
+REQUEST		registrar novo restaurante	1714648004845	1714648004864	OK	 
+USER	Registrar novo restaurante	END	1714648004866
+USER	Registrar novo restaurante	START	1714648004939
+REQUEST		registrar novo restaurante	1714648004938	1714648004960	OK	 
+USER	Registrar novo restaurante	END	1714648004961
+USER	Registrar novo restaurante	START	1714648005047
+REQUEST		registrar novo restaurante	1714648005046	1714648005066	OK	 
+USER	Registrar novo restaurante	END	1714648005068
+USER	Registrar novo restaurante	START	1714648005141
+REQUEST		registrar novo restaurante	1714648005140	1714648005160	OK	 
+USER	Registrar novo restaurante	END	1714648005161
+USER	Registrar novo restaurante	START	1714648005250
+REQUEST		registrar novo restaurante	1714648005248	1714648005266	OK	 
+USER	Registrar novo restaurante	END	1714648005268
+USER	Registrar novo restaurante	START	1714648005343
+REQUEST		registrar novo restaurante	1714648005342	1714648005360	OK	 
+USER	Registrar novo restaurante	END	1714648005361
+USER	Registrar novo restaurante	START	1714648005451
+REQUEST		registrar novo restaurante	1714648005450	1714648005469	OK	 
+USER	Registrar novo restaurante	END	1714648005471
+USER	Registrar novo restaurante	START	1714648005544
+REQUEST		registrar novo restaurante	1714648005543	1714648005563	OK	 
+USER	Registrar novo restaurante	END	1714648005565
+USER	Registrar novo restaurante	START	1714648005653
+REQUEST		registrar novo restaurante	1714648005652	1714648005672	OK	 
+USER	Registrar novo restaurante	END	1714648005675
+USER	Registrar novo restaurante	START	1714648005745
+REQUEST		registrar novo restaurante	1714648005743	1714648005765	OK	 
+USER	Registrar novo restaurante	END	1714648005767
+USER	Registrar novo restaurante	START	1714648005838
+REQUEST		registrar novo restaurante	1714648005837	1714648005871	OK	 
+USER	Registrar novo restaurante	END	1714648005875
+USER	Registrar novo restaurante	START	1714648005945
+REQUEST		registrar novo restaurante	1714648005944	1714648005967	OK	 
+USER	Registrar novo restaurante	END	1714648005970
+USER	Registrar novo restaurante	START	1714648006038
+REQUEST		registrar novo restaurante	1714648006037	1714648006060	OK	 
+USER	Registrar novo restaurante	END	1714648006063
+USER	Registrar novo restaurante	START	1714648006147
+REQUEST		registrar novo restaurante	1714648006146	1714648006168	OK	 
+USER	Registrar novo restaurante	END	1714648006170
+USER	Registrar novo restaurante	START	1714648006241
+REQUEST		registrar novo restaurante	1714648006240	1714648006261	OK	 
+USER	Registrar novo restaurante	END	1714648006263
+USER	Registrar novo restaurante	START	1714648006350
+REQUEST		registrar novo restaurante	1714648006349	1714648006369	OK	 
+USER	Registrar novo restaurante	END	1714648006371
+USER	Registrar novo restaurante	START	1714648006443
+REQUEST		registrar novo restaurante	1714648006441	1714648006467	OK	 
+USER	Registrar novo restaurante	END	1714648006469
+USER	Registrar novo restaurante	START	1714648006551
+REQUEST		registrar novo restaurante	1714648006549	1714648006579	OK	 
+USER	Registrar novo restaurante	END	1714648006581
+USER	Registrar novo restaurante	START	1714648006642
+REQUEST		registrar novo restaurante	1714648006641	1714648006666	OK	 
+USER	Registrar novo restaurante	END	1714648006668
+USER	Registrar novo restaurante	START	1714648006735
+REQUEST		registrar novo restaurante	1714648006734	1714648006756	OK	 
+USER	Registrar novo restaurante	END	1714648006758
+USER	Registrar novo restaurante	START	1714648006843
+REQUEST		registrar novo restaurante	1714648006842	1714648006866	OK	 
+USER	Registrar novo restaurante	END	1714648006869
+USER	Registrar novo restaurante	START	1714648006937
+REQUEST		registrar novo restaurante	1714648006936	1714648006961	OK	 
+USER	Registrar novo restaurante	END	1714648006963
+USER	Registrar novo restaurante	START	1714648007044
+REQUEST		registrar novo restaurante	1714648007043	1714648007069	OK	 
+USER	Registrar novo restaurante	END	1714648007071
+USER	Registrar novo restaurante	START	1714648007141
+REQUEST		registrar novo restaurante	1714648007140	1714648007162	OK	 
+USER	Registrar novo restaurante	END	1714648007164
+USER	Registrar novo restaurante	START	1714648007247
+REQUEST		registrar novo restaurante	1714648007246	1714648007270	OK	 
+USER	Registrar novo restaurante	END	1714648007272
+USER	Registrar novo restaurante	START	1714648007340
+REQUEST		registrar novo restaurante	1714648007339	1714648007356	OK	 
+USER	Registrar novo restaurante	END	1714648007358
+USER	Registrar novo restaurante	START	1714648007448
+REQUEST		registrar novo restaurante	1714648007447	1714648007466	OK	 
+USER	Registrar novo restaurante	END	1714648007467
+USER	Registrar novo restaurante	START	1714648007540
+REQUEST		registrar novo restaurante	1714648007539	1714648007556	OK	 
+USER	Registrar novo restaurante	END	1714648007558
+USER	Registrar novo restaurante	START	1714648007649
+REQUEST		registrar novo restaurante	1714648007648	1714648007667	OK	 
+USER	Registrar novo restaurante	END	1714648007669
+USER	Registrar novo restaurante	START	1714648007741
+REQUEST		registrar novo restaurante	1714648007740	1714648007759	OK	 
+USER	Registrar novo restaurante	END	1714648007760
+USER	Registrar novo restaurante	START	1714648007849
+REQUEST		registrar novo restaurante	1714648007848	1714648007908	OK	 
+USER	Registrar novo restaurante	END	1714648007910
+USER	Registrar novo restaurante	START	1714648007942
+REQUEST		registrar novo restaurante	1714648007941	1714648007971	OK	 
+USER	Registrar novo restaurante	END	1714648007973
+USER	Registrar novo restaurante	START	1714648008050
+REQUEST		registrar novo restaurante	1714648008049	1714648008065	OK	 
+USER	Registrar novo restaurante	END	1714648008067
+USER	Registrar novo restaurante	START	1714648008144
+REQUEST		registrar novo restaurante	1714648008143	1714648008161	OK	 
+USER	Registrar novo restaurante	END	1714648008162
+USER	Registrar novo restaurante	START	1714648008237
+REQUEST		registrar novo restaurante	1714648008236	1714648008253	OK	 
+USER	Registrar novo restaurante	END	1714648008255
+USER	Registrar novo restaurante	START	1714648008346
+REQUEST		registrar novo restaurante	1714648008346	1714648008359	OK	 
+USER	Registrar novo restaurante	END	1714648008360
+USER	Registrar novo restaurante	START	1714648008442
+REQUEST		registrar novo restaurante	1714648008442	1714648008456	OK	 
+USER	Registrar novo restaurante	END	1714648008457
+USER	Registrar novo restaurante	START	1714648008550
+REQUEST		registrar novo restaurante	1714648008549	1714648008562	OK	 
+USER	Registrar novo restaurante	END	1714648008564
+USER	Registrar novo restaurante	START	1714648008643
+REQUEST		registrar novo restaurante	1714648008642	1714648008658	OK	 
+USER	Registrar novo restaurante	END	1714648008659
+USER	Registrar novo restaurante	START	1714648008736
+REQUEST		registrar novo restaurante	1714648008735	1714648008748	OK	 
+USER	Registrar novo restaurante	END	1714648008750
+USER	Registrar novo restaurante	START	1714648008843
+REQUEST		registrar novo restaurante	1714648008843	1714648008856	OK	 
+USER	Registrar novo restaurante	END	1714648008857
+USER	Registrar novo restaurante	START	1714648008937
+REQUEST		registrar novo restaurante	1714648008936	1714648008948	OK	 
+USER	Registrar novo restaurante	END	1714648008949
+USER	Registrar novo restaurante	START	1714648009048
+REQUEST		registrar novo restaurante	1714648009047	1714648009058	OK	 
+USER	Registrar novo restaurante	END	1714648009059
+USER	Registrar novo restaurante	START	1714648009140
+REQUEST		registrar novo restaurante	1714648009139	1714648009150	OK	 
+USER	Registrar novo restaurante	END	1714648009151
+USER	Registrar novo restaurante	START	1714648009249
+REQUEST		registrar novo restaurante	1714648009249	1714648009259	OK	 
+USER	Registrar novo restaurante	END	1714648009260
+USER	Registrar novo restaurante	START	1714648009344
+REQUEST		registrar novo restaurante	1714648009343	1714648009353	OK	 
+USER	Registrar novo restaurante	END	1714648009354
+USER	Registrar novo restaurante	START	1714648009438
+REQUEST		registrar novo restaurante	1714648009437	1714648009448	OK	 
+USER	Registrar novo restaurante	END	1714648009448
+USER	Registrar novo restaurante	START	1714648009547
+REQUEST		registrar novo restaurante	1714648009546	1714648009556	OK	 
+USER	Registrar novo restaurante	END	1714648009557
+USER	Registrar novo restaurante	START	1714648009641
+REQUEST		registrar novo restaurante	1714648009640	1714648009650	OK	 
+USER	Registrar novo restaurante	END	1714648009651
+USER	Registrar novo restaurante	START	1714648009734
+REQUEST		registrar novo restaurante	1714648009733	1714648009743	OK	 
+USER	Registrar novo restaurante	END	1714648009744
+USER	Registrar novo restaurante	START	1714648009843
+REQUEST		registrar novo restaurante	1714648009842	1714648009854	OK	 
+USER	Registrar novo restaurante	END	1714648009855
+USER	Registrar novo restaurante	START	1714648009934
+REQUEST		registrar novo restaurante	1714648009933	1714648009943	OK	 
+USER	Registrar novo restaurante	END	1714648009944
+USER	Registrar novo restaurante	START	1714648010046
+REQUEST		registrar novo restaurante	1714648010045	1714648010055	OK	 
+USER	Registrar novo restaurante	END	1714648010056
+USER	Registrar novo restaurante	START	1714648010139
+REQUEST		registrar novo restaurante	1714648010138	1714648010148	OK	 
+USER	Registrar novo restaurante	END	1714648010148
+USER	Registrar novo restaurante	START	1714648010248
+REQUEST		registrar novo restaurante	1714648010247	1714648010257	OK	 
+USER	Registrar novo restaurante	END	1714648010258
+USER	Registrar novo restaurante	START	1714648010341
+REQUEST		registrar novo restaurante	1714648010340	1714648010349	OK	 
+USER	Registrar novo restaurante	END	1714648010350
+USER	Registrar novo restaurante	START	1714648010450
+REQUEST		registrar novo restaurante	1714648010450	1714648010457	OK	 
+USER	Registrar novo restaurante	END	1714648010458
+USER	Registrar novo restaurante	START	1714648010544
+REQUEST		registrar novo restaurante	1714648010543	1714648010553	OK	 
+USER	Registrar novo restaurante	END	1714648010554
+USER	Registrar novo restaurante	START	1714648010637
+REQUEST		registrar novo restaurante	1714648010636	1714648010647	OK	 
+USER	Registrar novo restaurante	END	1714648010648
+USER	Registrar novo restaurante	START	1714648010747
+REQUEST		registrar novo restaurante	1714648010746	1714648010757	OK	 
+USER	Registrar novo restaurante	END	1714648010757
+USER	Registrar novo restaurante	START	1714648010839
+REQUEST		registrar novo restaurante	1714648010838	1714648010847	OK	 
+USER	Registrar novo restaurante	END	1714648010847
+USER	Registrar novo restaurante	START	1714648010948
+REQUEST		registrar novo restaurante	1714648010947	1714648010956	OK	 
+USER	Registrar novo restaurante	END	1714648010957
+USER	Registrar novo restaurante	START	1714648011042
+REQUEST		registrar novo restaurante	1714648011041	1714648011050	OK	 
+USER	Registrar novo restaurante	END	1714648011051
+USER	Registrar novo restaurante	START	1714648011134
+REQUEST		registrar novo restaurante	1714648011134	1714648011142	OK	 
+USER	Registrar novo restaurante	END	1714648011143
+USER	Registrar novo restaurante	START	1714648011245
+REQUEST		registrar novo restaurante	1714648011244	1714648011253	OK	 
+USER	Registrar novo restaurante	END	1714648011254
+USER	Registrar novo restaurante	START	1714648011337
+REQUEST		registrar novo restaurante	1714648011337	1714648011344	OK	 
+USER	Registrar novo restaurante	END	1714648011345
+USER	Registrar novo restaurante	START	1714648011446
+REQUEST		registrar novo restaurante	1714648011445	1714648011452	OK	 
+USER	Registrar novo restaurante	END	1714648011453
+USER	Registrar novo restaurante	START	1714648011541
+REQUEST		registrar novo restaurante	1714648011540	1714648011550	OK	 
+USER	Registrar novo restaurante	END	1714648011551
+USER	Registrar novo restaurante	START	1714648011650
+REQUEST		registrar novo restaurante	1714648011649	1714648011659	OK	 
+USER	Registrar novo restaurante	END	1714648011660
+USER	Registrar novo restaurante	START	1714648011743
+REQUEST		registrar novo restaurante	1714648011742	1714648011752	OK	 
+USER	Registrar novo restaurante	END	1714648011752
+USER	Registrar novo restaurante	START	1714648011836
+REQUEST		registrar novo restaurante	1714648011835	1714648011846	OK	 
+USER	Registrar novo restaurante	END	1714648011846
+USER	Registrar novo restaurante	START	1714648011944
+REQUEST		registrar novo restaurante	1714648011943	1714648011952	OK	 
+USER	Registrar novo restaurante	END	1714648011953
+USER	Registrar novo restaurante	START	1714648012037
+REQUEST		registrar novo restaurante	1714648012036	1714648012046	OK	 
+USER	Registrar novo restaurante	END	1714648012046
+USER	Registrar novo restaurante	START	1714648012147
+REQUEST		registrar novo restaurante	1714648012146	1714648012156	OK	 
+USER	Registrar novo restaurante	END	1714648012157
+USER	Registrar novo restaurante	START	1714648012240
+REQUEST		registrar novo restaurante	1714648012240	1714648012253	OK	 
+USER	Registrar novo restaurante	END	1714648012253
+USER	Registrar novo restaurante	START	1714648012349
+REQUEST		registrar novo restaurante	1714648012348	1714648012356	OK	 
+USER	Registrar novo restaurante	END	1714648012357
+USER	Registrar novo restaurante	START	1714648012443
+REQUEST		registrar novo restaurante	1714648012442	1714648012450	OK	 
+USER	Registrar novo restaurante	END	1714648012451
+USER	Registrar novo restaurante	START	1714648012536
+REQUEST		registrar novo restaurante	1714648012536	1714648012543	OK	 
+USER	Registrar novo restaurante	END	1714648012544
+USER	Registrar novo restaurante	START	1714648012645
+REQUEST		registrar novo restaurante	1714648012645	1714648012655	OK	 
+USER	Registrar novo restaurante	END	1714648012656
+USER	Registrar novo restaurante	START	1714648012739
+REQUEST		registrar novo restaurante	1714648012738	1714648012747	OK	 
+USER	Registrar novo restaurante	END	1714648012748
+USER	Registrar novo restaurante	START	1714648012849
+REQUEST		registrar novo restaurante	1714648012848	1714648012857	OK	 
+USER	Registrar novo restaurante	END	1714648012858
+USER	Registrar novo restaurante	START	1714648012942
+REQUEST		registrar novo restaurante	1714648012942	1714648012950	OK	 
+USER	Registrar novo restaurante	END	1714648012950
+USER	Registrar novo restaurante	START	1714648013036
+REQUEST		registrar novo restaurante	1714648013035	1714648013045	OK	 
+USER	Registrar novo restaurante	END	1714648013045
+USER	Registrar novo restaurante	START	1714648013144
+REQUEST		registrar novo restaurante	1714648013143	1714648013152	OK	 
+USER	Registrar novo restaurante	END	1714648013153
+USER	Registrar novo restaurante	START	1714648013237
+REQUEST		registrar novo restaurante	1714648013237	1714648013245	OK	 
+USER	Registrar novo restaurante	END	1714648013246
+USER	Registrar novo restaurante	START	1714648013347
+REQUEST		registrar novo restaurante	1714648013346	1714648013357	OK	 
+USER	Registrar novo restaurante	END	1714648013358
+USER	Registrar novo restaurante	START	1714648013439
+REQUEST		registrar novo restaurante	1714648013438	1714648013447	OK	 
+USER	Registrar novo restaurante	END	1714648013448
+USER	Registrar novo restaurante	START	1714648013549
+REQUEST		registrar novo restaurante	1714648013548	1714648013559	OK	 
+USER	Registrar novo restaurante	END	1714648013559
+USER	Registrar novo restaurante	START	1714648013643
+REQUEST		registrar novo restaurante	1714648013643	1714648013650	OK	 
+USER	Registrar novo restaurante	END	1714648013651
+USER	Registrar novo restaurante	START	1714648013737
+REQUEST		registrar novo restaurante	1714648013736	1714648013746	OK	 
+USER	Registrar novo restaurante	END	1714648013747
+USER	Registrar novo restaurante	START	1714648013845
+REQUEST		registrar novo restaurante	1714648013845	1714648013854	OK	 
+USER	Registrar novo restaurante	END	1714648013854
+USER	Registrar novo restaurante	START	1714648013938
+REQUEST		registrar novo restaurante	1714648013938	1714648013945	OK	 
+USER	Registrar novo restaurante	END	1714648013945
+USER	Registrar novo restaurante	START	1714648014047
+REQUEST		registrar novo restaurante	1714648014046	1714648014056	OK	 
+USER	Registrar novo restaurante	END	1714648014056
+USER	Registrar novo restaurante	START	1714648014140
+REQUEST		registrar novo restaurante	1714648014139	1714648014146	OK	 
+USER	Registrar novo restaurante	END	1714648014147
+USER	Registrar novo restaurante	START	1714648014249
+REQUEST		registrar novo restaurante	1714648014249	1714648014258	OK	 
+USER	Registrar novo restaurante	END	1714648014259
+USER	Registrar novo restaurante	START	1714648014343
+REQUEST		registrar novo restaurante	1714648014342	1714648014351	OK	 
+USER	Registrar novo restaurante	END	1714648014352
+USER	Registrar novo restaurante	START	1714648014441
+REQUEST		registrar novo restaurante	1714648014434	1714648014448	OK	 
+USER	Registrar novo restaurante	END	1714648014449
+USER	Registrar novo restaurante	START	1714648014544
+REQUEST		registrar novo restaurante	1714648014543	1714648014553	OK	 
+USER	Registrar novo restaurante	END	1714648014553
+USER	Registrar novo restaurante	START	1714648014637
+REQUEST		registrar novo restaurante	1714648014636	1714648014645	OK	 
+USER	Registrar novo restaurante	END	1714648014646
+USER	Registrar novo restaurante	START	1714648014745
+REQUEST		registrar novo restaurante	1714648014745	1714648014755	OK	 
+USER	Registrar novo restaurante	END	1714648014756
+USER	Registrar novo restaurante	START	1714648014838
+REQUEST		registrar novo restaurante	1714648014837	1714648014848	OK	 
+USER	Registrar novo restaurante	END	1714648014849
+USER	Registrar novo restaurante	START	1714648014947
+REQUEST		registrar novo restaurante	1714648014946	1714648014956	OK	 
+USER	Registrar novo restaurante	END	1714648014956
+USER	Registrar novo restaurante	START	1714648015040
+REQUEST		registrar novo restaurante	1714648015039	1714648015048	OK	 
+USER	Registrar novo restaurante	END	1714648015049
+USER	Registrar novo restaurante	START	1714648015148
+REQUEST		registrar novo restaurante	1714648015148	1714648015158	OK	 
+USER	Registrar novo restaurante	END	1714648015158
+USER	Registrar novo restaurante	START	1714648015241
+REQUEST		registrar novo restaurante	1714648015240	1714648015249	OK	 
+USER	Registrar novo restaurante	END	1714648015250
+USER	Registrar novo restaurante	START	1714648015348
+REQUEST		registrar novo restaurante	1714648015348	1714648015358	OK	 
+USER	Registrar novo restaurante	END	1714648015358
+USER	Registrar novo restaurante	START	1714648015441
+REQUEST		registrar novo restaurante	1714648015441	1714648015449	OK	 
+USER	Registrar novo restaurante	END	1714648015450
+USER	Registrar novo restaurante	START	1714648015534
+REQUEST		registrar novo restaurante	1714648015533	1714648015541	OK	 
+USER	Registrar novo restaurante	END	1714648015541
+USER	Registrar novo restaurante	START	1714648015645
+REQUEST		registrar novo restaurante	1714648015644	1714648015653	OK	 
+USER	Registrar novo restaurante	END	1714648015654
+USER	Registrar novo restaurante	START	1714648015737
+REQUEST		registrar novo restaurante	1714648015736	1714648015745	OK	 
+USER	Registrar novo restaurante	END	1714648015746
+USER	Registrar novo restaurante	START	1714648015847
+REQUEST		registrar novo restaurante	1714648015847	1714648015853	OK	 
+USER	Registrar novo restaurante	END	1714648015854
+USER	Registrar novo restaurante	START	1714648015940
+REQUEST		registrar novo restaurante	1714648015939	1714648015945	OK	 
+USER	Registrar novo restaurante	END	1714648015945
+USER	Registrar novo restaurante	START	1714648016048
+REQUEST		registrar novo restaurante	1714648016048	1714648016056	OK	 
+USER	Registrar novo restaurante	END	1714648016057
+USER	Registrar novo restaurante	START	1714648016141
+REQUEST		registrar novo restaurante	1714648016141	1714648016147	OK	 
+USER	Registrar novo restaurante	END	1714648016147
+USER	Registrar novo restaurante	START	1714648016235
+REQUEST		registrar novo restaurante	1714648016235	1714648016243	OK	 
+USER	Registrar novo restaurante	END	1714648016244
+USER	Registrar novo restaurante	START	1714648016344
+REQUEST		registrar novo restaurante	1714648016343	1714648016350	OK	 
+USER	Registrar novo restaurante	END	1714648016351
+USER	Registrar novo restaurante	START	1714648016436
+REQUEST		registrar novo restaurante	1714648016435	1714648016442	OK	 
+USER	Registrar novo restaurante	END	1714648016443
+USER	Registrar novo restaurante	START	1714648016545
+REQUEST		registrar novo restaurante	1714648016545	1714648016553	OK	 
+USER	Registrar novo restaurante	END	1714648016553
+USER	Registrar novo restaurante	START	1714648016655
+REQUEST		registrar novo restaurante	1714648016654	1714648016664	OK	 
+USER	Registrar novo restaurante	END	1714648016665
+USER	Registrar novo restaurante	START	1714648016748
+REQUEST		registrar novo restaurante	1714648016747	1714648016755	OK	 
+USER	Registrar novo restaurante	END	1714648016756
+USER	Registrar novo restaurante	START	1714648016841
+REQUEST		registrar novo restaurante	1714648016840	1714648016850	OK	 
+USER	Registrar novo restaurante	END	1714648016851
+USER	Registrar novo restaurante	START	1714648016949
+REQUEST		registrar novo restaurante	1714648016948	1714648016956	OK	 
+USER	Registrar novo restaurante	END	1714648016957
+USER	Registrar novo restaurante	START	1714648017043
+REQUEST		registrar novo restaurante	1714648017042	1714648017051	OK	 
+USER	Registrar novo restaurante	END	1714648017051
+USER	Registrar novo restaurante	START	1714648017137
+REQUEST		registrar novo restaurante	1714648017136	1714648017145	OK	 
+USER	Registrar novo restaurante	END	1714648017145
+USER	Registrar novo restaurante	START	1714648017245
+REQUEST		registrar novo restaurante	1714648017244	1714648017250	OK	 
+USER	Registrar novo restaurante	END	1714648017251
+USER	Registrar novo restaurante	START	1714648017337
+REQUEST		registrar novo restaurante	1714648017336	1714648017344	OK	 
+USER	Registrar novo restaurante	END	1714648017345
+USER	Registrar novo restaurante	START	1714648017448
+REQUEST		registrar novo restaurante	1714648017447	1714648017456	OK	 
+USER	Registrar novo restaurante	END	1714648017457
+USER	Registrar novo restaurante	START	1714648017540
+REQUEST		registrar novo restaurante	1714648017539	1714648017548	OK	 
+USER	Registrar novo restaurante	END	1714648017549
+USER	Registrar novo restaurante	START	1714648017649
+REQUEST		registrar novo restaurante	1714648017648	1714648017657	OK	 
+USER	Registrar novo restaurante	END	1714648017658
+USER	Registrar novo restaurante	START	1714648017744
+REQUEST		registrar novo restaurante	1714648017743	1714648017750	OK	 
+USER	Registrar novo restaurante	END	1714648017751
+USER	Registrar novo restaurante	START	1714648017839
+REQUEST		registrar novo restaurante	1714648017838	1714648017846	OK	 
+USER	Registrar novo restaurante	END	1714648017846
+USER	Registrar novo restaurante	START	1714648017947
+REQUEST		registrar novo restaurante	1714648017946	1714648017952	OK	 
+USER	Registrar novo restaurante	END	1714648017953
+USER	Registrar novo restaurante	START	1714648018040
+REQUEST		registrar novo restaurante	1714648018039	1714648018045	OK	 
+USER	Registrar novo restaurante	END	1714648018046
+USER	Registrar novo restaurante	START	1714648018135
+REQUEST		registrar novo restaurante	1714648018135	1714648018144	OK	 
+USER	Registrar novo restaurante	END	1714648018145
+USER	Registrar novo restaurante	START	1714648018244
+REQUEST		registrar novo restaurante	1714648018244	1714648018250	OK	 
+USER	Registrar novo restaurante	END	1714648018251
+USER	Registrar novo restaurante	START	1714648018339
+REQUEST		registrar novo restaurante	1714648018338	1714648018348	OK	 
+USER	Registrar novo restaurante	END	1714648018348
+USER	Registrar novo restaurante	START	1714648018446
+REQUEST		registrar novo restaurante	1714648018445	1714648018455	OK	 
+USER	Registrar novo restaurante	END	1714648018455
+USER	Registrar novo restaurante	START	1714648018541
+REQUEST		registrar novo restaurante	1714648018539	1714648018549	OK	 
+USER	Registrar novo restaurante	END	1714648018550
+USER	Registrar novo restaurante	START	1714648018649
+REQUEST		registrar novo restaurante	1714648018648	1714648018656	OK	 
+USER	Registrar novo restaurante	END	1714648018657
+USER	Registrar novo restaurante	START	1714648018757
+REQUEST		registrar novo restaurante	1714648018757	1714648018765	OK	 
+USER	Registrar novo restaurante	END	1714648018766
+USER	Registrar novo restaurante	START	1714648018865
+REQUEST		registrar novo restaurante	1714648018864	1714648018876	OK	 
+USER	Registrar novo restaurante	END	1714648018877
+USER	Registrar novo restaurante	START	1714648018974
+REQUEST		registrar novo restaurante	1714648018973	1714648018982	OK	 
+USER	Registrar novo restaurante	END	1714648018982
+USER	Registrar novo restaurante	START	1714648019081
+REQUEST		registrar novo restaurante	1714648019081	1714648019088	OK	 
+USER	Registrar novo restaurante	END	1714648019089
+USER	Registrar novo restaurante	START	1714648019190
+REQUEST		registrar novo restaurante	1714648019190	1714648019197	OK	 
+USER	Registrar novo restaurante	END	1714648019197
+USER	Registrar novo restaurante	START	1714648019314
+REQUEST		registrar novo restaurante	1714648019314	1714648019319	OK	 
+USER	Registrar novo restaurante	END	1714648019319
+USER	Registrar novo restaurante	START	1714648019424
+REQUEST		registrar novo restaurante	1714648019423	1714648019434	OK	 
+USER	Registrar novo restaurante	END	1714648019435
+USER	Registrar novo restaurante	START	1714648019533
+REQUEST		registrar novo restaurante	1714648019532	1714648019542	OK	 
+USER	Registrar novo restaurante	END	1714648019542
+USER	Registrar novo restaurante	START	1714648019641
+REQUEST		registrar novo restaurante	1714648019641	1714648019647	OK	 
+USER	Registrar novo restaurante	END	1714648019648
+USER	Registrar novo restaurante	START	1714648019751
+REQUEST		registrar novo restaurante	1714648019750	1714648019759	OK	 
+USER	Registrar novo restaurante	END	1714648019760
+USER	Registrar novo restaurante	START	1714648019858
+REQUEST		registrar novo restaurante	1714648019857	1714648019865	OK	 
+USER	Registrar novo restaurante	END	1714648019866
+USER	Registrar novo restaurante	START	1714648019968
+REQUEST		registrar novo restaurante	1714648019968	1714648019976	OK	 
+USER	Registrar novo restaurante	END	1714648019976
+USER	Registrar novo restaurante	START	1714648020092
+REQUEST		registrar novo restaurante	1714648020091	1714648020101	OK	 
+USER	Registrar novo restaurante	END	1714648020102
+USER	Registrar novo restaurante	START	1714648020200
+REQUEST		registrar novo restaurante	1714648020199	1714648020206	OK	 
+USER	Registrar novo restaurante	END	1714648020206
+USER	Registrar novo restaurante	START	1714648020308
+REQUEST		registrar novo restaurante	1714648020308	1714648020314	OK	 
+USER	Registrar novo restaurante	END	1714648020315
+USER	Registrar novo restaurante	START	1714648020418
+REQUEST		registrar novo restaurante	1714648020418	1714648020425	OK	 
+USER	Registrar novo restaurante	END	1714648020426
+USER	Registrar novo restaurante	START	1714648020528
+REQUEST		registrar novo restaurante	1714648020528	1714648020534	OK	 
+USER	Registrar novo restaurante	END	1714648020534
+USER	Registrar novo restaurante	START	1714648020653
+REQUEST		registrar novo restaurante	1714648020653	1714648020661	OK	 
+USER	Registrar novo restaurante	END	1714648020663
+USER	Registrar novo restaurante	START	1714648020779
+REQUEST		registrar novo restaurante	1714648020778	1714648020785	OK	 
+USER	Registrar novo restaurante	END	1714648020786
+USER	Registrar novo restaurante	START	1714648020919
+REQUEST		registrar novo restaurante	1714648020918	1714648020926	OK	 
+USER	Registrar novo restaurante	END	1714648020927
+USER	Registrar novo restaurante	START	1714648021075
+REQUEST		registrar novo restaurante	1714648021075	1714648021086	OK	 
+USER	Registrar novo restaurante	END	1714648021087
+USER	Registrar novo restaurante	START	1714648021216
+REQUEST		registrar novo restaurante	1714648021215	1714648021226	OK	 
+USER	Registrar novo restaurante	END	1714648021227
+USER	Registrar novo restaurante	START	1714648021357
+REQUEST		registrar novo restaurante	1714648021357	1714648021370	OK	 
+USER	Registrar novo restaurante	END	1714648021372
+USER	Registrar novo restaurante	START	1714648021498
+REQUEST		registrar novo restaurante	1714648021497	1714648021514	OK	 
+USER	Registrar novo restaurante	END	1714648021515
+USER	Registrar novo restaurante	START	1714648021650
+REQUEST		registrar novo restaurante	1714648021649	1714648021663	OK	 
+USER	Registrar novo restaurante	END	1714648021665
+USER	Registrar novo restaurante	START	1714648021790
+REQUEST		registrar novo restaurante	1714648021789	1714648021807	OK	 
+USER	Registrar novo restaurante	END	1714648021809
+USER	Registrar novo restaurante	START	1714648021930
+REQUEST		registrar novo restaurante	1714648021929	1714648021949	OK	 
+USER	Registrar novo restaurante	END	1714648021951
+USER	Registrar novo restaurante	START	1714648022070
+REQUEST		registrar novo restaurante	1714648022069	1714648022091	OK	 
+USER	Registrar novo restaurante	END	1714648022093
+USER	Registrar novo restaurante	START	1714648022210
+REQUEST		registrar novo restaurante	1714648022209	1714648022231	OK	 
+USER	Registrar novo restaurante	END	1714648022233
+USER	Registrar novo restaurante	START	1714648022351
+REQUEST		registrar novo restaurante	1714648022350	1714648022371	OK	 
+USER	Registrar novo restaurante	END	1714648022373
+USER	Registrar novo restaurante	START	1714648022507
+REQUEST		registrar novo restaurante	1714648022505	1714648022527	OK	 
+USER	Registrar novo restaurante	END	1714648022528
+USER	Registrar novo restaurante	START	1714648022647
+REQUEST		registrar novo restaurante	1714648022646	1714648022670	OK	 
+USER	Registrar novo restaurante	END	1714648022672
+USER	Registrar novo restaurante	START	1714648022801
+REQUEST		registrar novo restaurante	1714648022800	1714648022818	OK	 
+USER	Registrar novo restaurante	END	1714648022820
+USER	Registrar novo restaurante	START	1714648022973
+REQUEST		registrar novo restaurante	1714648022972	1714648022998	OK	 
+USER	Registrar novo restaurante	END	1714648022999
+USER	Registrar novo restaurante	START	1714648023143
+REQUEST		registrar novo restaurante	1714648023142	1714648023164	OK	 
+USER	Registrar novo restaurante	END	1714648023165
+USER	Registrar novo restaurante	START	1714648023312
+REQUEST		registrar novo restaurante	1714648023311	1714648023327	OK	 
+USER	Registrar novo restaurante	END	1714648023329
+USER	Registrar novo restaurante	START	1714648023484
+REQUEST		registrar novo restaurante	1714648023483	1714648023503	OK	 
+USER	Registrar novo restaurante	END	1714648023505
+USER	Registrar novo restaurante	START	1714648023638
+REQUEST		registrar novo restaurante	1714648023637	1714648023658	OK	 
+USER	Registrar novo restaurante	END	1714648023660
+USER	Registrar novo restaurante	START	1714648023842
+REQUEST		registrar novo restaurante	1714648023841	1714648023860	OK	 
+USER	Registrar novo restaurante	END	1714648023862
+USER	Registrar novo restaurante	START	1714648024043
+REQUEST		registrar novo restaurante	1714648024042	1714648024061	OK	 
+USER	Registrar novo restaurante	END	1714648024063
+USER	Registrar novo restaurante	START	1714648024246
+REQUEST		registrar novo restaurante	1714648024245	1714648024262	OK	 
+USER	Registrar novo restaurante	END	1714648024263
+USER	Registrar novo restaurante	START	1714648024447
+REQUEST		registrar novo restaurante	1714648024446	1714648024465	OK	 
+USER	Registrar novo restaurante	END	1714648024467
+USER	Registrar novo restaurante	START	1714648024650
+REQUEST		registrar novo restaurante	1714648024649	1714648024666	OK	 
+USER	Registrar novo restaurante	END	1714648024667
+USER	Registrar novo restaurante	START	1714648024897
+REQUEST		registrar novo restaurante	1714648024896	1714648024913	OK	 
+USER	Registrar novo restaurante	END	1714648024915
+USER	Registrar novo restaurante	START	1714648025146
+REQUEST		registrar novo restaurante	1714648025146	1714648025161	OK	 
+USER	Registrar novo restaurante	END	1714648025162
+USER	Registrar novo restaurante	START	1714648025397
+REQUEST		registrar novo restaurante	1714648025396	1714648025414	OK	 
+USER	Registrar novo restaurante	END	1714648025415
+USER	Registrar novo restaurante	START	1714648025645
+REQUEST		registrar novo restaurante	1714648025644	1714648025663	OK	 
+USER	Registrar novo restaurante	END	1714648025664
+USER	Registrar novo restaurante	START	1714648025893
+REQUEST		registrar novo restaurante	1714648025892	1714648025912	OK	 
+USER	Registrar novo restaurante	END	1714648025914
+USER	Registrar novo restaurante	START	1714648026141
+REQUEST		registrar novo restaurante	1714648026140	1714648026161	OK	 
+USER	Registrar novo restaurante	END	1714648026162
+USER	Registrar novo restaurante	START	1714648026390
+REQUEST		registrar novo restaurante	1714648026389	1714648026410	OK	 
+USER	Registrar novo restaurante	END	1714648026412
+USER	Registrar novo restaurante	START	1714648026642
+REQUEST		registrar novo restaurante	1714648026641	1714648026669	OK	 
+USER	Registrar novo restaurante	END	1714648026671
+USER	Registrar novo restaurante	START	1714648027137
+REQUEST		registrar novo restaurante	1714648027136	1714648027158	OK	 
+USER	Registrar novo restaurante	END	1714648027160
+USER	Registrar novo restaurante	START	1714648027639
+REQUEST		registrar novo restaurante	1714648027638	1714648027652	OK	 
+USER	Registrar novo restaurante	END	1714648027653
+USER	Registrar novo restaurante	START	1714648028137
+REQUEST		registrar novo restaurante	1714648028136	1714648028150	OK	 
+USER	Registrar novo restaurante	END	1714648028151
