@@ -1,0 +1,42 @@
+services:
+
+  app:
+    image: 'bookrestaurant:test'
+    build:
+      context: .
+    container_name: 'bookrestaurant-test'
+    ports:
+      - '8015:8080'
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/bookrestaurant
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=root
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=create-drop
+    depends_on:
+      - db
+    networks:
+      - appnetwork
+
+  db:
+    container_name: psql
+    image: postgres:16.2
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+    ports:
+      - 5430:5432
+    volumes:
+      - ./script-database.sql:/docker-entrypoint-initdb.d/script-database.sql
+      - vlpsqldb:/var/lib/postgresql/data
+    networks:
+      - appnetwork
+
+
+networks:
+  appnetwork:
+    name: bookrestaurant
+    driver: bridge
+
+volumes:
+  vlpsqldb:

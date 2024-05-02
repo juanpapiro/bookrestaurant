@@ -5,6 +5,8 @@ import br.com.bookrestaurant.external.model.OpeningHourModel;
 import br.com.bookrestaurant.infraestructure.gateway.impl.restaurant.OpeningHourGateway;
 import br.com.bookrestaurant.infraestructure.gateway.interfaces.restaurant.IDataBase;
 import br.com.bookrestaurant.utilsbytests.Util;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
@@ -42,6 +44,7 @@ class OpeningHourGatewayTest {
     @Nested
     class RegisterRestaurant {
         @Test
+        @Severity(SeverityLevel.MINOR)
         void testShouldRegisterOpeningHour() {
             openingHourGateway.registerOpeningHour(
                     Util.buildOpeningHour(), Util.getUUID());
@@ -51,6 +54,7 @@ class OpeningHourGatewayTest {
         }
 
         @Test
+        @Severity(SeverityLevel.BLOCKER)
         void testShouldRegisterOpeningHours() {
             openingHourGateway.registerOpeningHours(
                     Util.buildOpeningHours(), Util.getUUID());

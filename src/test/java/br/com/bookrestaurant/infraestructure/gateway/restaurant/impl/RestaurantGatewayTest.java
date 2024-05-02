@@ -4,6 +4,8 @@ import br.com.bookrestaurant.entity.restaurant.RestaurantEntity;
 import br.com.bookrestaurant.infraestructure.gateway.impl.restaurant.RestaurantGateway;
 import br.com.bookrestaurant.infraestructure.gateway.interfaces.restaurant.IDataBase;
 import br.com.bookrestaurant.utilsbytests.Util;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
@@ -44,6 +46,7 @@ public class RestaurantGatewayTest {
     @Nested
     class RegisterRestaurant {
         @Test
+        @Severity(SeverityLevel.BLOCKER)
         void testShourRegisterRestaurant() {
             restaurantGateway.registerRestaurant(Util.buildRestaurantEntity());
             verify(dataBase, times(1))
@@ -54,6 +57,7 @@ public class RestaurantGatewayTest {
     @Nested
     class FindRestaurant {
         @Test
+        @Severity(SeverityLevel.BLOCKER)
         void testShouldPermitFindRestaurantByName() {
             String name = "restaurante da mama";
             when(dataBase.findByName(Mockito.anyString()))
@@ -65,6 +69,7 @@ public class RestaurantGatewayTest {
                     .extracting("name").isEqualTo(name);
         }
         @Test
+        @Severity(SeverityLevel.BLOCKER)
         void testShouldPermitFindRestaurantByTypeCousine() {
             String typeOfCuisine = "Italiana";
             when(dataBase.findByTypeOfCuisine(Mockito.anyString()))
@@ -78,6 +83,7 @@ public class RestaurantGatewayTest {
                     .isEqualToIgnoringCase(typeOfCuisine);
         }
         @Test
+        @Severity(SeverityLevel.BLOCKER)
         void testShouldPermitFindRestaurantByLocation() {
             String uf = "SP";
             String city = "Embu das Artes";

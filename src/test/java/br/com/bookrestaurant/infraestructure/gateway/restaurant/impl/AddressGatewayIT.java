@@ -19,7 +19,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 @SpringBootTest
 @AutoConfigureTestDatabase
 @Transactional
-class AddressGatewayIT {
+public class AddressGatewayIT {
 
     private AddressGateway addressGateway;
 

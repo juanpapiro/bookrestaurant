@@ -23,7 +23,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.fail;
 @SpringBootTest
 @AutoConfigureTestDatabase
 @Transactional
-class DataBaseJpaIT {
+public class DataBaseJpaIT {
 
     @Autowired
     private DataBaseJpa dataBaseJpa;

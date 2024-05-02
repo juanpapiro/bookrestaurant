@@ -5,6 +5,8 @@ import br.com.bookrestaurant.entity.restaurant.RestaurantEntity;
 import br.com.bookrestaurant.entity.restaurant.exception.RestaurantNotFoundException;
 import br.com.bookrestaurant.utilsbytests.Util;
 import br.com.bookrestaurant.entity.restaurant.exception.RestaurantInvalidException;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
@@ -20,6 +22,7 @@ public class RestaurantUseCaseTest {
     @Nested
     class RegisterRestaurant {
         @Test
+        @Severity(SeverityLevel.BLOCKER)
         void testShouldPermitRegisterRestaurant() {
             RestaurantEntity restaurant = RestaurantUseCase.registerRestaurant(
                     "Nome restaurant", "Italiana", 20,
@@ -28,6 +31,7 @@ public class RestaurantUseCaseTest {
         }
 
         @Test
+        @Severity(SeverityLevel.MINOR)
         void testShouldThrowExceptionWhenTryRegisterRestaurantWithDayOpeningHoursPlusSize() {
             List<OpeningHour> openingHours = Util.buildOpeningHours();
             openingHours.add(Util.buildOpeningHour(1));
@@ -39,6 +43,7 @@ public class RestaurantUseCaseTest {
         }
 
         @Test
+        @Severity(SeverityLevel.MINOR)
         void testShouldThrowExceptionWhenTryRegisterRestaurantWithDayOpeningDuplication() {
             assertThatThrownBy(() -> RestaurantUseCase.registerRestaurant(
                     "Nome restaurant", "Italiana", 20,
@@ -51,6 +56,7 @@ public class RestaurantUseCaseTest {
     @Nested
     class FindRestaurant {
         @Test
+        @Severity(SeverityLevel.BLOCKER)
         void testShouldPermitFindRestaurantByName() {
             String name = "Restaurante da Mama";
             name = RestaurantUseCase.findByName(name);
@@ -64,6 +70,7 @@ public class RestaurantUseCaseTest {
         }
 
         @Test
+        @Severity(SeverityLevel.MINOR)
         void testShouldThrowExceptionFindRestaurantByNameWhenNotValidName() {
             String name = "R";
             assertThatThrownBy(() -> RestaurantUseCase.findByName(name))
@@ -72,6 +79,7 @@ public class RestaurantUseCaseTest {
         }
 
         @Test
+        @Severity(SeverityLevel.MINOR)
         void testShouldThrowExceptionFindRestaurantByNameWhenListNullOrEmpty() {
             List<RestaurantEntity> restaurants = Arrays.asList();
             assertThatThrownBy(() -> RestaurantUseCase.locateRestaurants(restaurants))
@@ -83,6 +91,7 @@ public class RestaurantUseCaseTest {
         }
 
         @Test
+        @Severity(SeverityLevel.BLOCKER)
         void testShouldPermitFindRestaurantByTypeCousine() {
             String typeOfCuisine = "Italiana";
             typeOfCuisine = RestaurantUseCase.findByLocale(typeOfCuisine);
@@ -96,6 +105,7 @@ public class RestaurantUseCaseTest {
         }
 
         @Test
+        @Severity(SeverityLevel.MINOR)
         void testShouldPermitFindRestaurantByTypeCousineWhenListNullOrEmpty() {
             String typeOfCuisine = "Ital";
             typeOfCuisine = RestaurantUseCase.findByLocale(typeOfCuisine);
@@ -109,6 +119,7 @@ public class RestaurantUseCaseTest {
         }
 
         @Test
+        @Severity(SeverityLevel.MINOR)
         void testShouldPermitFindRestaurantByTypeCousineWhenNotValidTypeOfCuisine() {
             String typeOfCuisine = "Ita";
             assertThatThrownBy(() -> RestaurantUseCase.findByLocale(typeOfCuisine))
@@ -117,6 +128,7 @@ public class RestaurantUseCaseTest {
         }
 
         @Test
+        @Severity(SeverityLevel.BLOCKER)
         void testShouldPermitFindRestaurantByLocation() {
             String uf = null;
             String city = "Embu das Artes  ";
@@ -128,6 +140,7 @@ public class RestaurantUseCaseTest {
             assertThat(params.get("neighborhood")).isNotNull().isEqualTo("jardim são vicente");
         }
         @Test
+        @Severity(SeverityLevel.MINOR)
         void testShouldPermitFindRestaurantByLocationParamNotValid() {
             assertThatThrownBy(() -> RestaurantUseCase.findByLocale(null, null, null))
                     .isInstanceOf(RestaurantInvalidException.class)

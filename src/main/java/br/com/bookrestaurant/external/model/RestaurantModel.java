@@ -39,6 +39,8 @@ public class RestaurantModel {
     private AddressModel address;
 
 //    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+//    @Fetch(FetchMode.SUBSELECT)
+
     @OneToMany(mappedBy = "restaurant", fetch = FetchType.LAZY)
     private Set<OpeningHourModel> openingHours;
 

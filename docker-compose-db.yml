@@ -1,0 +1,24 @@
+services:
+  db:
+    container_name: psql
+    image: postgres:16.2
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+    ports:
+      - 5430:5432
+    volumes:
+      - ./script-database.sql:/docker-entrypoint-initdb.d/script-database.sql
+      - vlpsqldb:/var/lib/postgresql/data
+    networks:
+      - appnetwork
+
+
+networks:
+  appnetwork:
+    name: bookrestaurant
+    driver: bridge
+
+volumes:
+  vlpsqldb:

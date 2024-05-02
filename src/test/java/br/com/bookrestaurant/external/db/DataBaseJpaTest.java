@@ -5,6 +5,8 @@ import br.com.bookrestaurant.external.model.AddressModel;
 import br.com.bookrestaurant.external.model.OpeningHourModel;
 import br.com.bookrestaurant.external.model.RestaurantModel;
 import br.com.bookrestaurant.utilsbytests.Util;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
@@ -51,6 +53,7 @@ class DataBaseJpaTest {
     @Nested
     class RegisterRestaurant {
         @Test
+        @Severity(SeverityLevel.BLOCKER)
         void testShouldRegisterRestaurant() {
             RestaurantModel restaurantModel = new RestaurantModel(Util.buildRestaurantEntitySaved());
             restaurantModel.setId(Util.getUUID());
@@ -65,6 +68,7 @@ class DataBaseJpaTest {
         }
 
         @Test
+        @Severity(SeverityLevel.BLOCKER)
         void shouldRegisterAddress() {
             dataBase.registerAddress(Util.buildAddres(), Util.getUUID());
             verify(addressRepository, times(1))
@@ -72,6 +76,7 @@ class DataBaseJpaTest {
         }
 
         @Test
+        @Severity(SeverityLevel.MINOR)
         void shouldRegisterOpeningHour() {
             dataBase.registerOpeningHour(Util.buildOpeningHour(), Util.getUUID());
             verify(openingHourRepository, times(1))
@@ -79,6 +84,7 @@ class DataBaseJpaTest {
         }
 
         @Test
+        @Severity(SeverityLevel.BLOCKER)
         void shouldRegisterOpeningHours() {
             dataBase.registerOpeningHours(Util.buildOpeningHours(), Util.getUUID());
             verify(openingHourRepository, times(1)).saveAll(Mockito.anyList());
@@ -89,6 +95,7 @@ class DataBaseJpaTest {
     @Nested
     class FindRestaurant {
         @Test
+        @Severity(SeverityLevel.BLOCKER)
         void testShouldPermitFindRestaurantByName() {
             String name = "Restaurante da Mama";
             when(restaurantRepository.findByName(Mockito.anyString()))
@@ -102,6 +109,7 @@ class DataBaseJpaTest {
                     .isEqualToIgnoringCase(name);
         }
         @Test
+        @Severity(SeverityLevel.BLOCKER)
         void testShouldPermitFindRestaurantByTypeCousine() {
             String typeOfCuisine = "Francesa";
             RestaurantModel restaurantModel = Util.buildRestaurantModelForName("Cusina");
@@ -117,6 +125,7 @@ class DataBaseJpaTest {
                     .isEqualToIgnoringCase(typeOfCuisine);
         }
         @Test
+        @Severity(SeverityLevel.BLOCKER)
         void testShouldPermitFindRestaurantByLocation() {
             String uf = "sp";
             String city = "embu das artes";

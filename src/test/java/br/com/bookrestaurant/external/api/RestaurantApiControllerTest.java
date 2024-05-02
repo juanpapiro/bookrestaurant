@@ -9,6 +9,8 @@ import br.com.bookrestaurant.infraestructure.gateway.interfaces.restaurant.IData
 import br.com.bookrestaurant.infraestructure.presenter.restaurant.AddressRecord;
 import br.com.bookrestaurant.infraestructure.presenter.restaurant.RestaurantRecord;
 import br.com.bookrestaurant.utilsbytests.Util;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
@@ -23,12 +25,9 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import java.util.Arrays;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
-import static org.assertj.core.api.AssertionsForClassTypes.fail;
-import static org.hamcrest.Matchers.not;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 public class RestaurantApiControllerTest {
@@ -68,6 +67,7 @@ public class RestaurantApiControllerTest {
     @Nested
     class RegisterRestaurant {
         @Test
+        @Severity(SeverityLevel.BLOCKER)
         void testShoudRegisterRestaurant() throws Exception {
             RestaurantEntity restaurantEntity = Util.buildRestaurantEntitySaved();
             restaurantEntity.setId(Util.getUUID());
@@ -83,6 +83,7 @@ public class RestaurantApiControllerTest {
         }
 
         @Test
+        @Severity(SeverityLevel.CRITICAL)
         void testShoudRegisterRestaurantBadRequest() throws Exception {
             when(restaurantController.register(Mockito.any(RestaurantRecord.class), Mockito.any(AddressRecord.class),
                     Mockito.anyList(), Mockito.any(IDataBase.class)))
@@ -100,6 +101,7 @@ public class RestaurantApiControllerTest {
     @Nested
     class FindRestaurant {
         @Test
+        @Severity(SeverityLevel.BLOCKER)
         void testShouldPermitFindRestaurantByName() throws Exception {
             String name = "Restaurante da Mama";
             when(restaurantController.findByName(Mockito.anyString(), Mockito.any(IDataBase.class)))
@@ -111,6 +113,7 @@ public class RestaurantApiControllerTest {
         }
 
         @Test
+        @Severity(SeverityLevel.CRITICAL)
         void testShouldFindRestaurantByBadRequest() throws Exception {
             String name = "R";
             when(restaurantController.findByName(Mockito.anyString(), Mockito.any(IDataBase.class)))
@@ -124,6 +127,7 @@ public class RestaurantApiControllerTest {
         }
 
         @Test
+        @Severity(SeverityLevel.MINOR)
         void testShouldFindRestaurantByNotFound() throws Exception {
             String name = "Restaurante da Mama";
             when(restaurantController.findByName(Mockito.anyString(), Mockito.any(IDataBase.class)))
@@ -136,6 +140,7 @@ public class RestaurantApiControllerTest {
                     .findByName(Mockito.anyString(), Mockito.any(IDataBase.class));
         }
         @Test
+        @Severity(SeverityLevel.BLOCKER)
         void testShouldPermitFindRestaurantByTypeCousine() throws Exception {
             String typeOfCuisine = "Italiana";
             when(restaurantController.findByTypeOfCuisine(Mockito.anyString(), Mockito.any(IDataBase.class)))
@@ -147,6 +152,7 @@ public class RestaurantApiControllerTest {
                     .findByTypeOfCuisine(Mockito.anyString(), Mockito.any(IDataBase.class));
         }
         @Test
+        @Severity(SeverityLevel.CRITICAL)
         void testShouldPermitFindRestaurantByTypeCousineBadRequest() throws Exception {
             String typeOfCuisine = "Ita";
             when(restaurantController.findByTypeOfCuisine(Mockito.anyString(), Mockito.any(IDataBase.class)))
@@ -159,6 +165,7 @@ public class RestaurantApiControllerTest {
                     .findByTypeOfCuisine(Mockito.anyString(), Mockito.any(IDataBase.class));
         }
         @Test
+        @Severity(SeverityLevel.MINOR)
         void testShouldPermitFindRestaurantByTypeCousineNotFound() throws Exception {
             String typeOfCuisine = "Italiana";
             when(restaurantController.findByTypeOfCuisine(Mockito.anyString(), Mockito.any(IDataBase.class)))
@@ -171,6 +178,7 @@ public class RestaurantApiControllerTest {
                     .findByTypeOfCuisine(Mockito.anyString(), Mockito.any(IDataBase.class));
         }
         @Test
+        @Severity(SeverityLevel.BLOCKER)
         void testShouldPermitFindRestaurantByLocation() throws Exception {
             String uf = "SP";
             String city = "Embu das Artes";
@@ -189,6 +197,7 @@ public class RestaurantApiControllerTest {
         }
 
         @Test
+        @Severity(SeverityLevel.CRITICAL)
         void testShouldPermitFindRestaurantByLocationBadRequest() throws Exception {
             when(restaurantController.findByLocale(Mockito.any(), Mockito.any(),
                     Mockito.any(), Mockito.any(IDataBase.class)))
@@ -201,6 +210,7 @@ public class RestaurantApiControllerTest {
         }
 
         @Test
+        @Severity(SeverityLevel.MINOR)
         void testShouldPermitFindRestaurantByLocationNotFound() throws Exception {
             String uf = "RJ";
             when(restaurantController.findByLocale(Mockito.anyString(), Mockito.any(),

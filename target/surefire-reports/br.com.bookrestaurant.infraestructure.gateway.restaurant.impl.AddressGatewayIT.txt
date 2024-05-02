@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: br.com.bookrestaurant.infraestructure.gateway.restaurant.impl.AddressGatewayIT
+-------------------------------------------------------------------------------
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.089 s -- in br.com.bookrestaurant.infraestructure.gateway.restaurant.impl.AddressGatewayIT

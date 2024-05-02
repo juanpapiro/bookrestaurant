@@ -7,6 +7,7 @@ import br.com.bookrestaurant.external.dto.RestaurantDto;
 import br.com.bookrestaurant.infraestructure.controller.RestaurantController;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Log4j2
 @RestController
 @RequestMapping("/restaurant")
 public class RestaurantApiController {
@@ -53,6 +55,7 @@ public class RestaurantApiController {
     public ResponseEntity<List<RestaurantDto>> findByLocale(@RequestParam(required = false) String uf,
                                                             @RequestParam(required = false) String city,
                                                             @RequestParam(required = false) String neighborhood) {
+        log.info("***** Buscando restaurante por localização: uf: {} - city: {}, neighborhood: {}", uf, city, neighborhood);
         List<RestaurantEntity> restaurantEntities = controller.findByLocale(uf, city, neighborhood, database);
         return ResponseEntity.ok(restaurantEntities.stream().map(RestaurantDto::new).toList());
     }

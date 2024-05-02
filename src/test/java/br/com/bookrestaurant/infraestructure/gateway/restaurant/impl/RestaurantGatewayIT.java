@@ -24,7 +24,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.fail;
 @SpringBootTest
 @AutoConfigureTestDatabase
 @Transactional
-class RestaurantGatewayIT {
+public class RestaurantGatewayIT {
 
     private RestaurantGateway restaurantGateway;
 
