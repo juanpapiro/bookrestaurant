@@ -1,15 +1,20 @@
 package br.com.bookrestaurant.utilsbytests;
 
+import br.com.bookrestaurant.entity.evaluate.EvaluateEntity;
+import br.com.bookrestaurant.entity.evaluate.EvaluateEntityBuilder;
 import br.com.bookrestaurant.entity.restaurant.Address;
 import br.com.bookrestaurant.entity.restaurant.OpeningHour;
 import br.com.bookrestaurant.entity.restaurant.RestaurantEntity;
 import br.com.bookrestaurant.entity.restaurant.RestaurantEntityBuilder;
 import br.com.bookrestaurant.external.dto.AddressDto;
+import br.com.bookrestaurant.external.dto.EvaluateDto;
 import br.com.bookrestaurant.external.dto.OpeningHourDto;
 import br.com.bookrestaurant.external.dto.RestaurantDto;
 import br.com.bookrestaurant.external.model.AddressModel;
+import br.com.bookrestaurant.external.model.EvaluateModel;
 import br.com.bookrestaurant.external.model.OpeningHourModel;
 import br.com.bookrestaurant.external.model.RestaurantModel;
+import br.com.bookrestaurant.infraestructure.presenter.evaluate.EvaluateRecord;
 import br.com.bookrestaurant.infraestructure.presenter.restaurant.AddressRecord;
 import br.com.bookrestaurant.infraestructure.presenter.restaurant.OpeningHourRecord;
 import br.com.bookrestaurant.infraestructure.presenter.restaurant.RestaurantRecord;
@@ -137,6 +142,45 @@ public class Util {
         } catch (Exception e) {
             return "{}";
         }
+    }
+
+    public static EvaluateModel buildEvaluateModel() {
+        return new EvaluateModel(getUUID(),
+                "Muito bom", 5, Util.buildRestaurantModelForName("Mama Mia"),
+                LocalDateTime.of(2024,12,1,10,0,0));
+    }
+
+    public static EvaluateEntity buildEvaluateEntity() {
+        return new EvaluateEntityBuilder()
+                .addInfos("Muito bom", 4, buildRestaurantEntitySaved())
+                .build();
+    }
+
+    public static EvaluateEntity buildEvaluateEntitySaved() {
+        return new EvaluateEntityBuilder()
+                .addInfos("Muito bom", 4, buildRestaurantEntitySaved())
+                .addId(getUUID())
+                .build();
+    }
+
+    public static EvaluateRecord buildEvaluateRecord() {
+        return new EvaluateRecord("Muito bom", 4, getUUID());
+    }
+
+    public static EvaluateDto buildEvaluateDto() {
+        EvaluateDto evaluateDto = new EvaluateDto();
+        evaluateDto.setEvaluation(4);
+        evaluateDto.setComment("Muito bom");
+        evaluateDto.setRestaurantId(UUID.fromString("118cd4e6-73fb-43a4-bc36-ed777289c28f"));
+        return evaluateDto;
+    }
+
+    public static EvaluateDto buildEvaluateDto(String restaurantId) {
+        EvaluateDto evaluateDto = new EvaluateDto();
+        evaluateDto.setEvaluation(4);
+        evaluateDto.setComment("Muito bom");
+        evaluateDto.setRestaurantId(UUID.fromString(restaurantId));
+        return evaluateDto;
     }
 
 }

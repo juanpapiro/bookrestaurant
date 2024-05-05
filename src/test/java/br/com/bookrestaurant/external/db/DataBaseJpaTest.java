@@ -1,7 +1,9 @@
 package br.com.bookrestaurant.external.db;
 
+import br.com.bookrestaurant.entity.evaluate.EvaluateEntity;
 import br.com.bookrestaurant.entity.restaurant.RestaurantEntity;
 import br.com.bookrestaurant.external.model.AddressModel;
+import br.com.bookrestaurant.external.model.EvaluateModel;
 import br.com.bookrestaurant.external.model.OpeningHourModel;
 import br.com.bookrestaurant.external.model.RestaurantModel;
 import br.com.bookrestaurant.utilsbytests.Util;
@@ -18,6 +20,8 @@ import org.mockito.MockitoAnnotations;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.fail;
@@ -36,6 +40,9 @@ class DataBaseJpaTest {
 
     @Mock
     private RestaurantRepository restaurantRepository;
+
+    @Mock
+    private EvaluateRepository evaluateRepository;
 
     private AutoCloseable mocks;
 
@@ -100,7 +107,7 @@ class DataBaseJpaTest {
             String name = "Restaurante da Mama";
             when(restaurantRepository.findByName(Mockito.anyString()))
                     .thenReturn(Arrays.asList(Util.buildRestaurantModelForName(name)));
-            List<RestaurantEntity> restaurants = dataBase.findByName(name);
+            List<RestaurantEntity> restaurants = dataBase.findRestaurantByName(name);
             assertThat(restaurants).isNotNull().asList()
                     .element(0)
                     .isInstanceOf(RestaurantEntity.class)
@@ -116,7 +123,7 @@ class DataBaseJpaTest {
             restaurantModel.setTypeOfCuisine(typeOfCuisine);
             when(restaurantRepository.findByTypeOfCuisine(Mockito.anyString()))
                     .thenReturn(Arrays.asList(restaurantModel));
-            List<RestaurantEntity> restaurants = dataBase.findByTypeOfCuisine(typeOfCuisine);
+            List<RestaurantEntity> restaurants = dataBase.findRestaurantByTypeOfCuisine(typeOfCuisine);
             assertThat(restaurants).isNotNull().asList()
                     .element(0)
                     .isInstanceOf(RestaurantEntity.class)
@@ -133,7 +140,7 @@ class DataBaseJpaTest {
             RestaurantModel restaurantModel = Util.buildRestaurantModelForName("Cusina");
             when(restaurantRepository.findByLocale(Mockito.anyString(),Mockito.anyString(),Mockito.anyString()))
                     .thenReturn(Arrays.asList(restaurantModel));
-            List<RestaurantEntity> restaurants = dataBase.findByLocale(uf, city, neighborhood);
+            List<RestaurantEntity> restaurants = dataBase.findRestaurantByLocale(uf, city, neighborhood);
             assertThat(restaurants).isNotNull().asList()
                     .element(0)
                     .isInstanceOf(RestaurantEntity.class)
@@ -141,6 +148,35 @@ class DataBaseJpaTest {
                     .extracting("uf")
                     .asString()
                     .isEqualToIgnoringCase(uf);
+        }
+        @Test
+        @Severity(SeverityLevel.TRIVIAL)
+        void testShouldPermitFindRestaurantById() {
+            RestaurantModel restaurantModel = Util.buildRestaurantModelForName("Cusina");
+            when(restaurantRepository.findById(Mockito.any(UUID.class)))
+                    .thenReturn(Optional.of(restaurantModel));
+            RestaurantEntity restaurant = dataBase.findRestaurantById(Util.getUUID());
+            assertThat(restaurant).isNotNull().isInstanceOf(RestaurantEntity.class);
+        }
+        @Test
+        @Severity(SeverityLevel.TRIVIAL)
+        void testShouldPermitFindRestaurantByIdReturnNull() {
+            when(restaurantRepository.findById(Mockito.any(UUID.class)))
+                    .thenReturn(Optional.empty());
+            RestaurantEntity restaurant = dataBase.findRestaurantById(Util.getUUID());
+            assertThat(restaurant).isNull();
+        }
+    }
+
+    @Nested
+    class RegisterEvaluate {
+        @Test
+        void testShouldRegisterEvaluate() {
+            when(evaluateRepository.save(Mockito.any(EvaluateModel.class)))
+                    .thenReturn(Util.buildEvaluateModel());
+            EvaluateEntity evaluateEntity = dataBase.registryEvaluate(Util.buildEvaluateEntity());
+            assertThat(evaluateEntity).isNotNull().isInstanceOf(EvaluateEntity.class);
+            assertThat(evaluateEntity.getEvaluateId()).isNotNull().isInstanceOf(UUID.class);
         }
     }
 

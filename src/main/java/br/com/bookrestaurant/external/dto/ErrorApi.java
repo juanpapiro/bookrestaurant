@@ -6,10 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Getter
-@Setter
-@ToString
-@AllArgsConstructor
-@NoArgsConstructor
 public class ErrorApi {
 
     private String message;

@@ -3,10 +3,7 @@ package br.com.bookrestaurant.external.model;
 import br.com.bookrestaurant.entity.restaurant.OpeningHour;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.beans.BeanUtils;
 
 import java.time.LocalTime;

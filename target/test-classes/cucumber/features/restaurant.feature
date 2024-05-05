@@ -1,6 +1,6 @@
 # language: pt
 
-Funcionalidade: Registrar Restaurante
+Funcionalidade: Restaurante
 
   Cenário: Registrar restaurante
     Quando registrar um novo restaurante

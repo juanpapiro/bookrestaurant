@@ -1,5 +1,6 @@
 package br.com.bookrestaurant.cucumber.bdd;
 
+import br.com.bookrestaurant.external.dto.EvaluateDto;
 import br.com.bookrestaurant.external.dto.RestaurantDto;
 import br.com.bookrestaurant.utilsbytests.Util;
 import io.cucumber.java.pt.Dado;
@@ -9,19 +10,30 @@ import io.restassured.response.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 
+import java.util.UUID;
+
 import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class StepDefinition {
 
     private Response response;
 
+    private Response responseEvaluate;
+
     private RestaurantDto restaurantDtoResponse;
 
-    private static final String URL = "http://localhost:8015/restaurant";
-    private static final String ENDPOINT_FIND_BY_NAME = "/by-name";
-    private static final String ENDPOINT_FIND_TYPE_OF_CUISINE = "/by-type-of-cuisine";
-    private static final String ENDPOINT_FIND_LOCALE = "/by-locale";
+    private EvaluateDto evaluateDtoResponse;
+
+    private static final String URL = "http://localhost:8015";
+
+    private static final String ENDPOINT_RESTAURANT = "/restaurant";
+    private static final String ENDPOINT_FIND_BY_NAME = "/restaurant/by-name";
+    private static final String ENDPOINT_FIND_TYPE_OF_CUISINE = "/restaurant/by-type-of-cuisine";
+    private static final String ENDPOINT_FIND_LOCALE = "/restaurant/by-locale";
+
+    private static final String ENDPOINT_EVALUATE = "/evaluate";
 
     @Quando("registrar um novo restaurante")
     public RestaurantDto registrar_um_novo_restaurante() {
@@ -30,7 +42,7 @@ public class StepDefinition {
                     .contentType(MediaType.APPLICATION_JSON_VALUE)
                     .body(restaurantRequest)
                     .when()
-                    .post(URL);
+                    .post(URL + ENDPOINT_RESTAURANT);
         return response.then().extract().as(RestaurantDto.class);
     }
     @Então("o restaurante é registrado com sucesso")
@@ -103,5 +115,48 @@ public class StepDefinition {
                 .when()
                 .get(URL + ENDPOINT_FIND_LOCALE);
       }
+
+
+
+
+
+    @Dado("uma avaliação sobre ele for registrada")
+    public void uma_avaliacao_sobre_ele_for_registrada() {
+        EvaluateDto evaluateDto = new EvaluateDto("Muito bom", 4, restaurantDtoResponse.getId());
+        responseEvaluate = given()
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .body(evaluateDto)
+                .when()
+                .post(URL + ENDPOINT_EVALUATE);
+    }
+    @Então("a avaliação é registrada com sucesso")
+    public void a_avaliacao_eh_registrada_com_sucesso() {
+        responseEvaluate.then().statusCode(HttpStatus.CREATED.value());
+    }
+
+    @Então("avaliação deve ser apresentada")
+    public void avaliacao_deve_ser_apresentada() {
+        responseEvaluate.then()
+                .body(matchesJsonSchemaInClasspath("jsonschemas/evaluate.schema.json"));
+    }
+
+    @Quando("feita uma nova solicitação de registro de avaliação")
+    public void feita_uma_nova_solicitacao_de_registro_de_avaliacao() {
+        EvaluateDto evaluateDto = new EvaluateDto("Muito bom", 4, UUID.randomUUID());
+        responseEvaluate = given()
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .body(evaluateDto)
+                .when()
+                .post(URL + ENDPOINT_EVALUATE);
+    }
+    @Quando("nenhum restaurante correspondente for localizado")
+    public void nenhum_restaurante_correspondente_for_localizado() {
+        assertThat(responseEvaluate.then().extract().body().jsonPath().getString("message"))
+                .isEqualTo("Restaurante avaliado não existe");
+    }
+    @Então("a avaliação não é registrada com sucesso")
+    public void a_avaliacao_nao_eh_registrada_com_sucesso() {
+        responseEvaluate.then().statusCode(HttpStatus.BAD_REQUEST.value());
+    }
 
 }

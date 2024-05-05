@@ -1,9 +1,8 @@
 package br.com.bookrestaurant.infraestructure.gateway.restaurant.impl;
 
 import br.com.bookrestaurant.entity.restaurant.OpeningHour;
-import br.com.bookrestaurant.external.model.OpeningHourModel;
 import br.com.bookrestaurant.infraestructure.gateway.impl.restaurant.OpeningHourGateway;
-import br.com.bookrestaurant.infraestructure.gateway.interfaces.restaurant.IDataBase;
+import br.com.bookrestaurant.infraestructure.gateway.interfaces.IDataBase;
 import br.com.bookrestaurant.utilsbytests.Util;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;

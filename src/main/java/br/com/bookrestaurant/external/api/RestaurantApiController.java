@@ -20,8 +20,8 @@ import java.util.List;
 @RequestMapping("/restaurant")
 public class RestaurantApiController {
 
-    private DataBaseJpa database;
-    private RestaurantController controller;
+    private final DataBaseJpa database;
+    private final RestaurantController controller;
 
     @Autowired
     public RestaurantApiController(DataBaseJpa database,

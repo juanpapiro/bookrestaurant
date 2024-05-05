@@ -2,6 +2,7 @@ package br.com.bookrestaurant.entity;
 
 import br.com.bookrestaurant.entity.restaurant.Address;
 import br.com.bookrestaurant.entity.restaurant.OpeningHour;
+import br.com.bookrestaurant.entity.restaurant.RestaurantEntity;
 import br.com.bookrestaurant.entity.restaurant.exception.RestaurantInvalidException;
 
 import java.time.LocalTime;
@@ -36,6 +37,10 @@ public class EntityUtil {
         return Optional.ofNullable(value)
                 .filter(l -> !l.isEmpty())
                 .orElseThrow(() -> new RestaurantInvalidException(message));
+    }
+
+    public static RestaurantEntity isNull(RestaurantEntity restaurantEntity, String message) {
+        return (RestaurantEntity) execute(restaurantEntity, message);
     }
 
     private static Object execute(Object value, String message) {

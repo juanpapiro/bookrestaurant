@@ -53,7 +53,7 @@ public class RestaurantGatewayIT {
         @Test
         void testShouldPermitFindRestaurantByName() {
             String name = "restaurante da mama";
-            List<RestaurantEntity> restaurants = restaurantGateway.findByName(name);
+            List<RestaurantEntity> restaurants = restaurantGateway.findRestaurantByName(name);
             assertThat(restaurants).isNotNull().asList()
                     .element(0)
                     .isInstanceOf(RestaurantEntity.class)
@@ -64,7 +64,7 @@ public class RestaurantGatewayIT {
         @Test
         void testShouldPermitFindRestaurantByTypeCousine() {
             String typeOfCuisine = "italiana";
-            List<RestaurantEntity> restaurants = restaurantGateway.findByTypeOfCuisine(typeOfCuisine);
+            List<RestaurantEntity> restaurants = restaurantGateway.findRestaurantByTypeOfCuisine(typeOfCuisine);
             assertThat(restaurants).isNotNull().asList()
                     .element(0)
                     .isInstanceOf(RestaurantEntity.class)
@@ -77,7 +77,7 @@ public class RestaurantGatewayIT {
             String uf = "sp";
             String city = "embu das artes";
             String neighborhood = "jardim são vicente";
-            List<RestaurantEntity> restaurants = restaurantGateway.findByLocale(uf, city, neighborhood);
+            List<RestaurantEntity> restaurants = restaurantGateway.findRestaurantByLocale(uf, city, neighborhood);
             assertThat(restaurants).isNotNull().asList()
                     .element(0)
                     .isInstanceOf(RestaurantEntity.class)
@@ -85,6 +85,14 @@ public class RestaurantGatewayIT {
                     .extracting("uf")
                     .asString()
                     .isEqualToIgnoringCase(uf);
+        }
+
+        @Test
+        void testShouldFindRestaurantById() {
+            UUID id = UUID.fromString("118cd4e6-73fb-43a4-bc36-ed777289c28f");
+            RestaurantEntity restaurantEntity = restaurantGateway.findRestaurantById(id);
+            assertThat(restaurantEntity).isNotNull().isInstanceOf(RestaurantEntity.class);
+            assertThat(restaurantEntity.getId()).isEqualTo(id);
         }
     }
 

@@ -41,23 +41,27 @@ public class RestaurantControllerIT {
     }
 
 
-    @Test
-    void testRegisterRestaurant() {
-        RestaurantEntity restaurantEntity = controller.register(
-                Util.buildRestaurantRecord(), Util.buildAddressRecord(),
-                Util.buildOpeningHoursRecords(), dataBaseJpa);
-        assertThat(restaurantEntity).isNotNull().isInstanceOf(RestaurantEntity.class);
-        assertThat(restaurantEntity.getId()).isNotNull().isInstanceOf(UUID.class);
-    }
+    @Nested
+    class RegisterRestaurant {
+        @Test
+        void testRegisterRestaurant() {
+            RestaurantEntity restaurantEntity = controller.register(
+                    Util.buildRestaurantRecord(), Util.buildAddressRecord(),
+                    Util.buildOpeningHoursRecords(), dataBaseJpa);
+            assertThat(restaurantEntity).isNotNull().isInstanceOf(RestaurantEntity.class);
+            assertThat(restaurantEntity.getId()).isNotNull().isInstanceOf(UUID.class);
+        }
 
-    @Test
-    void testRegisterRestaurantWhenException() {
-        AddressRecord addressRecord = new AddressRecord(null, null, null, null, null, null);
-        assertThatThrownBy(() -> controller.register(
-                Util.buildRestaurantRecord(), addressRecord,
-                Util.buildOpeningHoursRecords(), dataBaseJpa))
-                .isInstanceOf(RestaurantInvalidException.class)
-                .hasMessage("Nome da rua é obrigatório");
+        @Test
+        void testRegisterRestaurantWhenException() {
+            AddressRecord addressRecord = new AddressRecord(null, null,
+                    null, null, null, null);
+            assertThatThrownBy(() -> controller.register(
+                    Util.buildRestaurantRecord(), addressRecord,
+                    Util.buildOpeningHoursRecords(), dataBaseJpa))
+                    .isInstanceOf(RestaurantInvalidException.class)
+                    .hasMessage("Nome da rua é obrigatório");
+        }
     }
 
     @Nested

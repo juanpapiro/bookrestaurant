@@ -6,9 +6,13 @@
 ```sh
 make test
 ```
-- para executar testes de sistema:
+- Para executar testes de sistema iniciando e finalizando app:
 ```sh
-mvn system-test
+make start-app-system-test
+```
+- Para executar teste de performance iniciando e finalizando app:
+```sh
+make start-app-performance-test
 ```
 
 ## Iniciar aplicação com make
@@ -22,7 +26,7 @@ make start-app-docker
 make stop-app-docker
 ```
 
-## Execução de testes
+## Execução de testes com mvn
 
 - Para executar testes unitários
 ```sh

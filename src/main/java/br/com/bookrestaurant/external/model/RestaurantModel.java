@@ -45,6 +45,10 @@ public class RestaurantModel {
     private Set<OpeningHourModel> openingHours;
 
 
+    public RestaurantModel(UUID id) {
+        this.id = id;
+    }
+
     public RestaurantModel(RestaurantEntity restaurantEntity) {
         this.name = restaurantEntity.getName();
         this.typeOfCuisine = restaurantEntity.getTypeOfCuisine();

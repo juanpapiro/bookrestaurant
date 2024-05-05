@@ -1,5 +1,6 @@
 package br.com.bookrestaurant.external.db;
 
+import br.com.bookrestaurant.entity.evaluate.EvaluateEntity;
 import br.com.bookrestaurant.entity.restaurant.Address;
 import br.com.bookrestaurant.entity.restaurant.OpeningHour;
 import br.com.bookrestaurant.entity.restaurant.RestaurantEntity;
@@ -66,7 +67,7 @@ public class DataBaseJpaIT {
         @Test
         void testShouldPermitFindRestaurantByName() {
             String name = "restaurante da mama";
-            List<RestaurantEntity> restaurants = dataBaseJpa.findByName(name);
+            List<RestaurantEntity> restaurants = dataBaseJpa.findRestaurantByName(name);
             assertThat(restaurants).isNotNull().asList()
                     .element(0)
                     .isInstanceOf(RestaurantEntity.class)
@@ -77,7 +78,7 @@ public class DataBaseJpaIT {
         @Test
         void testShouldPermitFindRestaurantByTypeCousine() {
             String typeOfCuisine = "italiana";
-            List<RestaurantEntity> restaurants = dataBaseJpa.findByTypeOfCuisine(typeOfCuisine);
+            List<RestaurantEntity> restaurants = dataBaseJpa.findRestaurantByTypeOfCuisine(typeOfCuisine);
             assertThat(restaurants).isNotNull().asList()
                     .element(0)
                     .isInstanceOf(RestaurantEntity.class)
@@ -91,7 +92,7 @@ public class DataBaseJpaIT {
             String city = "embu das artes";
             String neighborhood = "jardim são vicente";
             RestaurantModel restaurantModel = Util.buildRestaurantModelForName("Cusina");
-            List<RestaurantEntity> restaurants = dataBaseJpa.findByLocale(uf, city, neighborhood);
+            List<RestaurantEntity> restaurants = dataBaseJpa.findRestaurantByLocale(uf, city, neighborhood);
             assertThat(restaurants).isNotNull().asList()
                     .element(0)
                     .isInstanceOf(RestaurantEntity.class)
@@ -99,6 +100,29 @@ public class DataBaseJpaIT {
                     .extracting("uf")
                     .asString()
                     .isEqualToIgnoringCase(uf);
+        }
+        @Test
+        void testShouldPermitFindRestaurantById() {
+            UUID id = UUID.fromString("118cd4e6-73fb-43a4-bc36-ed777289c28f");
+            RestaurantEntity restaurant = dataBaseJpa.findRestaurantById(id);
+            assertThat(restaurant).isNotNull().isInstanceOf(RestaurantEntity.class);
+        }
+        @Test
+        void testShouldPermitFindRestaurantByIdReturnNull() {
+            UUID id = UUID.fromString("118cd4e6-73fb-43a4-bc36-ed777289c123");
+            RestaurantEntity restaurant = dataBaseJpa.findRestaurantById(id);
+            assertThat(restaurant).isNull();
+        }
+    }
+
+    @Nested
+    class RegisterEvaluate {
+        @Test
+        void testShouldRegisterEvaluate() {
+            EvaluateEntity entity = Util.buildEvaluateEntity();
+            EvaluateEntity evaluateEntity = dataBaseJpa.registryEvaluate(entity);
+            assertThat(evaluateEntity).isNotNull().isInstanceOf(EvaluateEntity.class);
+            assertThat(evaluateEntity.getEvaluateId()).isNotNull().isInstanceOf(UUID.class);
         }
     }
 

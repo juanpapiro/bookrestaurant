@@ -18,8 +18,10 @@ import static io.gatling.javaapi.http.HttpDsl.status;
 
 public class PerformSimulation extends Simulation {
 
-    private static final String ENDPOINT = "/restaurant";
+    private static final String ENDPOINT_RESTAURANT = "/restaurant";
     private static final String FYND_BY_NAME = "/by-name";
+
+    private static final String ENDPOINT_EVALUATE = "/evaluate";
 
     private final HttpProtocolBuilder httpProtocol = http
             .baseUrl("http://localhost:8015");
@@ -29,9 +31,10 @@ public class PerformSimulation extends Simulation {
             .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE);
 
     ActionBuilder actionBuilderAddRestaurant = http("registrar novo restaurante")
-            .post(ENDPOINT)
+            .post(ENDPOINT_RESTAURANT)
             .body(StringBody(Util.toJson(Util.buildRestaurantDtoRequest())))
             .check(status().is(HttpStatus.CREATED.value()))
+            .check(jsonPath("$.id").saveAs("restaurantId"))
             .check(jsonPath("$.name").saveAs("restaurantName"))
             .check(jsonPath("$.typeOfCuisine").saveAs("restaurantTypeOfCuisine"))
             .check(jsonPath("$.address.uf").saveAs("addressUf"))
@@ -43,7 +46,7 @@ public class PerformSimulation extends Simulation {
 
 
     ActionBuilder actionBuilderFindRestaurantByName = http("Buscar restaurante por nome")
-            .get(ENDPOINT + FYND_BY_NAME)
+            .get(ENDPOINT_RESTAURANT + FYND_BY_NAME)
             .queryParam("name", "#{restaurantName}")
             .check(status().is(HttpStatus.OK.value()));
 
@@ -52,11 +55,20 @@ public class PerformSimulation extends Simulation {
             .exec(actionBuilderFindRestaurantByName);
 
 
+    ActionBuilder actionBuilderAddEvaluate = http("Registrar nova avaliação de restaurante")
+            .post(ENDPOINT_EVALUATE)
+            .body(StringBody("{\"comment\": \"Muito bom\",\"evaluation\": 4,\"restaurantId\": \"#{restaurantId}\"}"))
+            .check(status().is(HttpStatus.CREATED.value()));
+
+    ScenarioBuilder scenarioBuilderAddEvaluate = scenario("Registrar nova avaliação de restaurante")
+            .exec(actionBuilderAddRestaurant)
+            .exec(actionBuilderAddEvaluate);
 
     {
         setUp(
                 configInjectOpenAddRestaurant(scenarioBuilderAddRestaurant, 1, 2, 10, 10, 10, 20),
-                configInjectOpenAddRestaurant(scenarioBuilderFindRestaurantByName, 1, 10, 10, 10, 10, 20)
+                configInjectOpenAddRestaurant(scenarioBuilderFindRestaurantByName, 1, 10, 10, 10, 10, 20),
+                configInjectOpenAddRestaurant(scenarioBuilderAddEvaluate, 1, 10, 10, 10, 10, 20)
         )
         .protocols(httpProtocolWithBody)
         .assertions(

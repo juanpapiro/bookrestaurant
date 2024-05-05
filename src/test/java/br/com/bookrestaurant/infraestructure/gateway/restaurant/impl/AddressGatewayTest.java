@@ -2,7 +2,7 @@ package br.com.bookrestaurant.infraestructure.gateway.restaurant.impl;
 
 import br.com.bookrestaurant.entity.restaurant.Address;
 import br.com.bookrestaurant.infraestructure.gateway.impl.restaurant.AddressGateway;
-import br.com.bookrestaurant.infraestructure.gateway.interfaces.restaurant.IDataBase;
+import br.com.bookrestaurant.infraestructure.gateway.interfaces.IDataBase;
 import br.com.bookrestaurant.utilsbytests.Util;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;

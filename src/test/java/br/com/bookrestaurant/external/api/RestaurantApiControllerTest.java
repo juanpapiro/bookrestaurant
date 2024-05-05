@@ -5,7 +5,7 @@ import br.com.bookrestaurant.entity.restaurant.exception.RestaurantInvalidExcept
 import br.com.bookrestaurant.entity.restaurant.exception.RestaurantNotFoundException;
 import br.com.bookrestaurant.external.db.DataBaseJpa;
 import br.com.bookrestaurant.infraestructure.controller.RestaurantController;
-import br.com.bookrestaurant.infraestructure.gateway.interfaces.restaurant.IDataBase;
+import br.com.bookrestaurant.infraestructure.gateway.interfaces.IDataBase;
 import br.com.bookrestaurant.infraestructure.presenter.restaurant.AddressRecord;
 import br.com.bookrestaurant.infraestructure.presenter.restaurant.RestaurantRecord;
 import br.com.bookrestaurant.utilsbytests.Util;
@@ -44,7 +44,6 @@ public class RestaurantApiControllerTest {
 
     private static final String ENDPOINT = "/restaurant";
     private static final String ENDPOINT_TYPE_OF_CUISINE = "/by-type-of-cuisine";
-
     private static final String ENDPOINT_LOCALE = "/by-locale";
 
     @BeforeEach

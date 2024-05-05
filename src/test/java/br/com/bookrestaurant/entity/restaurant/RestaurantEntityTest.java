@@ -12,16 +12,13 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 public class RestaurantEntityTest {
 
     @Test
-    void testShouldPermitRegisterRestaurantEntity() {
+    void testShouldPermitBuildRestaurantEntity() {
         RestaurantEntity restaurantEntity = Util.buildRestaurantEntity();
         assertThat(restaurantEntity).isNotNull().isInstanceOf(RestaurantEntity.class);
         assertThat(restaurantEntity.getName()).isNotNull().isEqualTo("Nome do restaurante");
         assertThat(restaurantEntity.getTypeOfCuisine()).isNotNull().isEqualTo("Italiana");
         assertThat(restaurantEntity.getCapacity()).isNotNull().isEqualTo(20);
         assertThat(restaurantEntity.getDateCreate()).isNotNull().isInstanceOf(LocalDateTime.class);
-//        assertThat(restaurantEntity.getAddress()).isNotNull().isInstanceOf(Address.class);
-//        assertThat(restaurantEntity.getOpeningHours()).isNotNull()
-//                .asList().isNotEmpty().element(0).isInstanceOf(OpeningHours.class);
     }
 
     @Test
@@ -39,6 +36,12 @@ public class RestaurantEntityTest {
                 .hasMessage("Capacidade é obrigatória");
     }
 
+    @Test
+    void testSetCapacity() {
+        RestaurantEntity entity = new RestaurantEntity("Nome", "tipo", 1);
+        entity.setCapacity(100);
+        assertThat(entity.getCapacity()).isEqualTo(100);
+    }
 
 
 }

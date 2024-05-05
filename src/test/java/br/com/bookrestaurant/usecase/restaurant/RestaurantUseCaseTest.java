@@ -13,6 +13,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import static org.assertj.core.api.AssertionsForClassTypes.*;
 
@@ -94,7 +95,7 @@ public class RestaurantUseCaseTest {
         @Severity(SeverityLevel.BLOCKER)
         void testShouldPermitFindRestaurantByTypeCousine() {
             String typeOfCuisine = "Italiana";
-            typeOfCuisine = RestaurantUseCase.findByLocale(typeOfCuisine);
+            typeOfCuisine = RestaurantUseCase.findByTypeOfCuisine(typeOfCuisine);
             List<RestaurantEntity> restaurants = Arrays.asList(
                     Util.buildRestaurantEntityForTypeOfCuisine(typeOfCuisine));
             restaurants = RestaurantUseCase.locateRestaurants(restaurants);
@@ -108,7 +109,7 @@ public class RestaurantUseCaseTest {
         @Severity(SeverityLevel.MINOR)
         void testShouldPermitFindRestaurantByTypeCousineWhenListNullOrEmpty() {
             String typeOfCuisine = "Ital";
-            typeOfCuisine = RestaurantUseCase.findByLocale(typeOfCuisine);
+            typeOfCuisine = RestaurantUseCase.findByTypeOfCuisine(typeOfCuisine);
             List<RestaurantEntity> restaurants = Arrays.asList();
             assertThatThrownBy(() ->  RestaurantUseCase.locateRestaurants(restaurants))
                     .isInstanceOf(RestaurantNotFoundException.class)
@@ -122,7 +123,7 @@ public class RestaurantUseCaseTest {
         @Severity(SeverityLevel.MINOR)
         void testShouldPermitFindRestaurantByTypeCousineWhenNotValidTypeOfCuisine() {
             String typeOfCuisine = "Ita";
-            assertThatThrownBy(() -> RestaurantUseCase.findByLocale(typeOfCuisine))
+            assertThatThrownBy(() -> RestaurantUseCase.findByTypeOfCuisine(typeOfCuisine))
                     .isInstanceOf(RestaurantInvalidException.class)
                     .hasMessage("Tipo de cozinha inválido!");
         }
@@ -133,7 +134,7 @@ public class RestaurantUseCaseTest {
             String uf = null;
             String city = "Embu das Artes  ";
             String neighborhood = "Jardim São Vicente";
-            Map<String,String> params =  RestaurantUseCase.findByLocale(uf, city, neighborhood);
+            Map<String,String> params =  RestaurantUseCase.findByTypeOfCuisine(uf, city, neighborhood);
             assertThat(params).isNotNull();
             assertThat(params.get("uf")).isNotNull().isEqualTo("");
             assertThat(params.get("city")).isNotNull().isEqualTo("embu das artes");
@@ -142,9 +143,17 @@ public class RestaurantUseCaseTest {
         @Test
         @Severity(SeverityLevel.MINOR)
         void testShouldPermitFindRestaurantByLocationParamNotValid() {
-            assertThatThrownBy(() -> RestaurantUseCase.findByLocale(null, null, null))
+            assertThatThrownBy(() -> RestaurantUseCase.findByTypeOfCuisine(null, null, null))
                     .isInstanceOf(RestaurantInvalidException.class)
                     .hasMessage("UF ou cidade ou bairro deve ser informado.");
+        }
+        @Test
+        @Severity(SeverityLevel.TRIVIAL)
+        void testShouldPermitFindRestaurantById() {
+            UUID id = RestaurantUseCase.findById(Util.getUUID());
+            assertThat(id).isNotNull()
+                    .isInstanceOf(UUID.class)
+                    .isEqualTo(Util.getUUID());
         }
 
     }

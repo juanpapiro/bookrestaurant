@@ -3,7 +3,7 @@ package br.com.bookrestaurant.infraestructure.controller;
 import br.com.bookrestaurant.entity.restaurant.RestaurantEntity;
 import br.com.bookrestaurant.entity.restaurant.exception.RestaurantInvalidException;
 import br.com.bookrestaurant.entity.restaurant.exception.RestaurantNotFoundException;
-import br.com.bookrestaurant.infraestructure.gateway.interfaces.restaurant.IDataBase;
+import br.com.bookrestaurant.infraestructure.gateway.interfaces.IDataBase;
 import br.com.bookrestaurant.infraestructure.presenter.restaurant.AddressRecord;
 import br.com.bookrestaurant.utilsbytests.Util;
 import org.junit.jupiter.api.AfterEach;
@@ -69,7 +69,7 @@ class RestaurantControllerTest {
         @Test
         void testShouldPermitFindRestaurantByName() {
             String name = "Restaurante da Mama";
-            when(database.findByName(Mockito.anyString()))
+            when(database.findRestaurantByName(Mockito.anyString()))
                     .thenReturn(Arrays.asList(Util.buildRestaurantEntityForName(name)));
             List<RestaurantEntity> restaurants = controller.findByName(name, database);
             assertThat(restaurants).isNotNull().asList()
@@ -89,7 +89,7 @@ class RestaurantControllerTest {
         @Test
         void testShouldThrowExceptionWhenFindRestaurantByNameWithEmpty() {
             String name = "Restaurante da Mama";
-            when(database.findByName(Mockito.anyString())).thenReturn(Arrays.asList());
+            when(database.findRestaurantByName(Mockito.anyString())).thenReturn(Arrays.asList());
             assertThatThrownBy(() -> controller.findByName(name, database))
                     .isInstanceOf(RestaurantNotFoundException.class)
                     .hasMessage("Restaurante não localizado!");
@@ -97,7 +97,7 @@ class RestaurantControllerTest {
         @Test
         void testShouldThrowExceptionWhenFindRestaurantByNameWithNull() {
             String name = "Restaurante da Mama";
-            when(database.findByName(Mockito.anyString())).thenReturn(null);
+            when(database.findRestaurantByName(Mockito.anyString())).thenReturn(null);
             assertThatThrownBy(() -> controller.findByName(name, database))
                     .isInstanceOf(RestaurantNotFoundException.class)
                     .hasMessage("Restaurante não localizado!");
@@ -105,7 +105,7 @@ class RestaurantControllerTest {
         @Test
         void testShouldPermitFindRestaurantByTypeCousine() {
             String typeOfCuisine = "Italiana";
-            when(database.findByTypeOfCuisine(Mockito.anyString()))
+            when(database.findRestaurantByTypeOfCuisine(Mockito.anyString()))
                     .thenReturn(Arrays.asList(Util.buildRestaurantEntityForName("Cusina")));
             List<RestaurantEntity> restaurants = controller.findByTypeOfCuisine(typeOfCuisine, database);
             assertThat(restaurants).isNotNull().asList()
@@ -125,7 +125,7 @@ class RestaurantControllerTest {
         @Test
         void testShouldPermitFindRestaurantByTypeCousineListEmpty() {
             String typeOfCuisine = "Ita";
-            when(database.findByTypeOfCuisine(Mockito.anyString())).thenReturn(Arrays.asList());
+            when(database.findRestaurantByTypeOfCuisine(Mockito.anyString())).thenReturn(Arrays.asList());
             assertThatThrownBy(() -> controller.findByName(typeOfCuisine, database))
                     .isInstanceOf(RestaurantNotFoundException.class)
                     .hasMessage("Restaurante não localizado!");
@@ -133,7 +133,7 @@ class RestaurantControllerTest {
         @Test
         void testShouldPermitFindRestaurantByTypeCousineListNull() {
             String typeOfCuisine = "Ita";
-            when(database.findByTypeOfCuisine(Mockito.anyString())).thenReturn(null);
+            when(database.findRestaurantByTypeOfCuisine(Mockito.anyString())).thenReturn(null);
             assertThatThrownBy(() -> controller.findByName(typeOfCuisine, database))
                     .isInstanceOf(RestaurantNotFoundException.class)
                     .hasMessage("Restaurante não localizado!");
@@ -143,7 +143,7 @@ class RestaurantControllerTest {
             String uf = "SP";
             String city = "Embu das Artes";
             String neighborhood = "Jardim São Vicente";
-            when(database.findByLocale(Mockito.anyString(),Mockito.anyString(),Mockito.anyString()))
+            when(database.findRestaurantByLocale(Mockito.anyString(),Mockito.anyString(),Mockito.anyString()))
                     .thenReturn(Arrays.asList(Util.buildRestaurantEntityForName("Cusina")));
             List<RestaurantEntity> restaurants = controller.findByLocale(uf, city, neighborhood, database);
             assertThat(restaurants).isNotNull().asList()
@@ -166,7 +166,7 @@ class RestaurantControllerTest {
             String uf = "SP";
             String city = "Embu das Artes";
             String neighborhood = "Jardim São Vicente";
-            when(database.findByLocale(Mockito.anyString(),Mockito.anyString(),Mockito.anyString()))
+            when(database.findRestaurantByLocale(Mockito.anyString(),Mockito.anyString(),Mockito.anyString()))
                     .thenReturn(Arrays.asList());
             assertThatThrownBy(() -> controller.findByLocale(uf, city, neighborhood, database))
                     .isInstanceOf(RestaurantNotFoundException.class)

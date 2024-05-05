@@ -16,7 +16,15 @@ system-test:
 start-app-system-test: start-app-docker
 	@echo "iniciando teste de integração"
 	@mvn test -P sys-test
+	@echo "Teste de sistema finalizado"
 	@echo "finalizando containers"
+	@make stop-app-docker
+
+start-app-performance-test: start-app-docker
+	@echo "iniciando teste de performance"
+	@mvn gatling:test -P performance-test
+	@echo "Teste de performance finalizado"
+	@echo "Finalizando containers"
 	@make stop-app-docker
 
 performance-test:

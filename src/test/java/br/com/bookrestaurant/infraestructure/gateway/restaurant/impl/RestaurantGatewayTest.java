@@ -2,7 +2,7 @@ package br.com.bookrestaurant.infraestructure.gateway.restaurant.impl;
 
 import br.com.bookrestaurant.entity.restaurant.RestaurantEntity;
 import br.com.bookrestaurant.infraestructure.gateway.impl.restaurant.RestaurantGateway;
-import br.com.bookrestaurant.infraestructure.gateway.interfaces.restaurant.IDataBase;
+import br.com.bookrestaurant.infraestructure.gateway.interfaces.IDataBase;
 import br.com.bookrestaurant.utilsbytests.Util;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -17,6 +17,7 @@ import org.mockito.MockitoAnnotations;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.fail;
@@ -60,9 +61,9 @@ public class RestaurantGatewayTest {
         @Severity(SeverityLevel.BLOCKER)
         void testShouldPermitFindRestaurantByName() {
             String name = "restaurante da mama";
-            when(dataBase.findByName(Mockito.anyString()))
+            when(dataBase.findRestaurantByName(Mockito.anyString()))
                     .thenReturn(Arrays.asList(Util.buildRestaurantEntityForName(name)));
-            List<RestaurantEntity> restaurants = restaurantGateway.findByName(name);
+            List<RestaurantEntity> restaurants = restaurantGateway.findRestaurantByName(name);
             assertThat(restaurants).isNotNull().asList()
                     .element(0)
                     .isInstanceOf(RestaurantEntity.class)
@@ -72,9 +73,9 @@ public class RestaurantGatewayTest {
         @Severity(SeverityLevel.BLOCKER)
         void testShouldPermitFindRestaurantByTypeCousine() {
             String typeOfCuisine = "Italiana";
-            when(dataBase.findByTypeOfCuisine(Mockito.anyString()))
+            when(dataBase.findRestaurantByTypeOfCuisine(Mockito.anyString()))
                     .thenReturn(Arrays.asList(Util.buildRestaurantEntityForName("Cusina")));
-            List<RestaurantEntity> restaurants = restaurantGateway.findByTypeOfCuisine(typeOfCuisine);
+            List<RestaurantEntity> restaurants = restaurantGateway.findRestaurantByTypeOfCuisine(typeOfCuisine);
             assertThat(restaurants).isNotNull().asList()
                     .element(0)
                     .isInstanceOf(RestaurantEntity.class)
@@ -88,9 +89,9 @@ public class RestaurantGatewayTest {
             String uf = "SP";
             String city = "Embu das Artes";
             String neighborhood = "Jardim São Vicente";
-            when(dataBase.findByLocale(Mockito.anyString(),Mockito.anyString(),Mockito.anyString()))
+            when(dataBase.findRestaurantByLocale(Mockito.anyString(),Mockito.anyString(),Mockito.anyString()))
                     .thenReturn(Arrays.asList(Util.buildRestaurantEntityForName("Cusina")));
-            List<RestaurantEntity> restaurants = restaurantGateway.findByLocale(uf, city, neighborhood);
+            List<RestaurantEntity> restaurants = restaurantGateway.findRestaurantByLocale(uf, city, neighborhood);
             assertThat(restaurants).isNotNull().asList()
                     .element(0)
                     .isInstanceOf(RestaurantEntity.class)
@@ -98,6 +99,16 @@ public class RestaurantGatewayTest {
                     .extracting("uf")
                     .asString()
                     .isEqualToIgnoringCase(uf);
+        }
+
+        @Test
+        @Severity(SeverityLevel.BLOCKER)
+        void testShouldFindRestaurantById() {
+            when(dataBase.findRestaurantById(Mockito.any(UUID.class)))
+                    .thenReturn(Util.buildRestaurantEntitySaved());
+            RestaurantEntity restaurantEntity = restaurantGateway.findRestaurantById(Util.getUUID());
+            assertThat(restaurantEntity).isNotNull().isInstanceOf(RestaurantEntity.class);
+            assertThat(restaurantEntity.getId()).isEqualTo(Util.getUUID());
         }
     }
 

@@ -2,7 +2,7 @@ package br.com.bookrestaurant.infraestructure.gateway.impl.restaurant;
 
 import br.com.bookrestaurant.entity.restaurant.Address;
 import br.com.bookrestaurant.infraestructure.gateway.interfaces.restaurant.IAddressGateway;
-import br.com.bookrestaurant.infraestructure.gateway.interfaces.restaurant.IDataBase;
+import br.com.bookrestaurant.infraestructure.gateway.interfaces.IDataBase;
 
 import java.util.UUID;
 

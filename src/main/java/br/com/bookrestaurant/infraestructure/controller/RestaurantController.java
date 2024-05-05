@@ -7,7 +7,7 @@ import br.com.bookrestaurant.infraestructure.gateway.impl.restaurant.AddressGate
 import br.com.bookrestaurant.infraestructure.gateway.impl.restaurant.OpeningHourGateway;
 import br.com.bookrestaurant.infraestructure.gateway.impl.restaurant.RestaurantGateway;
 import br.com.bookrestaurant.infraestructure.gateway.interfaces.restaurant.IAddressGateway;
-import br.com.bookrestaurant.infraestructure.gateway.interfaces.restaurant.IDataBase;
+import br.com.bookrestaurant.infraestructure.gateway.interfaces.IDataBase;
 import br.com.bookrestaurant.infraestructure.gateway.interfaces.restaurant.IOpeningHourGateway;
 import br.com.bookrestaurant.infraestructure.gateway.interfaces.restaurant.IRestaurantGateway;
 import br.com.bookrestaurant.infraestructure.presenter.restaurant.AddressRecord;
@@ -49,19 +49,19 @@ public class RestaurantController {
 
     public List<RestaurantEntity> findByName(String name, IDataBase database) {
         name = RestaurantUseCase.findByName(name);
-        List<RestaurantEntity> restaurants = database.findByName(name);
+        List<RestaurantEntity> restaurants = database.findRestaurantByName(name);
         return RestaurantUseCase.locateRestaurants(restaurants);
     }
 
     public List<RestaurantEntity> findByTypeOfCuisine(String typeOfCuisine, IDataBase database) {
-        typeOfCuisine = RestaurantUseCase.findByLocale(typeOfCuisine);
-        List<RestaurantEntity> restaurants = database.findByTypeOfCuisine(typeOfCuisine);
+        typeOfCuisine = RestaurantUseCase.findByTypeOfCuisine(typeOfCuisine);
+        List<RestaurantEntity> restaurants = database.findRestaurantByTypeOfCuisine(typeOfCuisine);
         return RestaurantUseCase.locateRestaurants(restaurants);
     }
 
     public List<RestaurantEntity> findByLocale(String uf, String city, String neighborhood, IDataBase database) {
-        Map<String,String> params = RestaurantUseCase.findByLocale(uf, city, neighborhood);
-        List<RestaurantEntity> restaurants = database.findByLocale(params.get("uf"), params.get("city"), params.get("neighborhood"));
+        Map<String,String> params = RestaurantUseCase.findByTypeOfCuisine(uf, city, neighborhood);
+        List<RestaurantEntity> restaurants = database.findRestaurantByLocale(params.get("uf"), params.get("city"), params.get("neighborhood"));
         return RestaurantUseCase.locateRestaurants(restaurants);
     }
 

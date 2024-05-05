@@ -1,7 +1,7 @@
 package br.com.bookrestaurant.infraestructure.gateway.impl.restaurant;
 
 import br.com.bookrestaurant.entity.restaurant.OpeningHour;
-import br.com.bookrestaurant.infraestructure.gateway.interfaces.restaurant.IDataBase;
+import br.com.bookrestaurant.infraestructure.gateway.interfaces.IDataBase;
 import br.com.bookrestaurant.infraestructure.gateway.interfaces.restaurant.IOpeningHourGateway;
 
 import java.util.List;
