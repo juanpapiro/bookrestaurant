@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: br.com.bookrestaurant.external.api.RestaurantApiControllerIT
--------------------------------------------------------------------------------
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.551 s -- in br.com.bookrestaurant.external.api.RestaurantApiControllerIT
