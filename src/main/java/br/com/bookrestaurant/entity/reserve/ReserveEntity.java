@@ -14,10 +14,10 @@ public class ReserveEntity {
     private Client client;
 
     public ReserveEntity (UUID restaurantId, LocalDateTime date, Integer seats, String status) {
-        this.restaurantId = EntityUtil.isNull(restaurantId, "Identificação do restaurante é obrigatória");
+        this.restaurantId = EntityUtil.isNullReserve(restaurantId, "Identificação do restaurante é obrigatória");
         this.date = EntityUtil.isNull(date, "Data e hora da reserva é obrigatória");
-        this.seats = EntityUtil.isNull(seats, "Número de pessoas é obrigatório");
-        this.status = EntityUtil.isNullOrBlank(status, "Situação da reserva é obrigatória");
+        this.seats = EntityUtil.isNullReserve(seats, "Número de pessoas é obrigatório");
+        this.status = EntityUtil.isNullOrBlankReserve(status, "Situação da reserva é obrigatória");
     }
 
     public UUID getId() {

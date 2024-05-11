@@ -1,11 +1,14 @@
 package br.com.bookrestaurant.entity;
 
+import br.com.bookrestaurant.entity.reserve.Client;
+import br.com.bookrestaurant.entity.reserve.exception.ReserveInvalidException;
 import br.com.bookrestaurant.entity.restaurant.Address;
 import br.com.bookrestaurant.entity.restaurant.OpeningHour;
 import br.com.bookrestaurant.entity.restaurant.exception.RestaurantInvalidException;
 import br.com.bookrestaurant.utilsbytests.Util;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -56,5 +59,27 @@ class EntityUtilTest {
         assertThatThrownBy(() -> EntityUtil.isNull(
                 openingHourList, "Horários de funcionamento não podem ser nulos."))
                 .isInstanceOf(RestaurantInvalidException.class);
+    }
+
+
+    @Test
+    void testUUIDReserveisNull() {
+        UUID id = null;
+        assertThatThrownBy(() -> EntityUtil.isNullReserve(id, ""))
+                .isInstanceOf(ReserveInvalidException.class);
+    }
+
+    @Test
+    void testLocalDateTimeIsNull() {
+        LocalDateTime date = null;
+        assertThatThrownBy(() -> EntityUtil.isNull(date, ""))
+                .isInstanceOf(ReserveInvalidException.class);
+    }
+
+    @Test
+    void testClientIsNull() {
+        Client client = null;
+        assertThatThrownBy(() -> EntityUtil.isNull(client, ""))
+                .isInstanceOf(ReserveInvalidException.class);
     }
 }

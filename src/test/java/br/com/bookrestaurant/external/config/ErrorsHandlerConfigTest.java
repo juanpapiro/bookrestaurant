@@ -29,11 +29,12 @@ class ErrorsHandlerConfigTest {
     }
 
     @Test
-    void testErrorRestaurant() {
+    void testError() {
         ResponseEntity<ErrorApi> errorResp = errorsHandlerConfig
-                .errorRestaurant(new RuntimeException("Falha genérica"));
+                .error(new RuntimeException("Falha genérica"));
         assertThat(errorResp).isNotNull().isInstanceOf(ResponseEntity.class)
                 .extracting("statusCode").isEqualTo(HttpStatus.INTERNAL_SERVER_ERROR);
     }
+
 
 }

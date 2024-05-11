@@ -7,8 +7,8 @@ public class Client {
     private Integer phone;
 
     public Client(String name, Integer phone) {
-        this.name = EntityUtil.isNullOrBlank(name, "Nome é obrigatório");
-        this.phone = EntityUtil.isNull(phone, "Contato é obrigatório");
+        this.name = EntityUtil.isNullOrBlankReserve(name, "Nome é obrigatório");
+        this.phone = EntityUtil.isNullReserve(phone, "Contato é obrigatório");
     }
 
     public String getName() {

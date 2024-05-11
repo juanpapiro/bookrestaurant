@@ -1,11 +1,9 @@
 package br.com.bookrestaurant.external.db;
 
 import br.com.bookrestaurant.entity.evaluate.EvaluateEntity;
+import br.com.bookrestaurant.entity.reserve.ReserveEntity;
 import br.com.bookrestaurant.entity.restaurant.RestaurantEntity;
-import br.com.bookrestaurant.external.model.AddressModel;
-import br.com.bookrestaurant.external.model.EvaluateModel;
-import br.com.bookrestaurant.external.model.OpeningHourModel;
-import br.com.bookrestaurant.external.model.RestaurantModel;
+import br.com.bookrestaurant.external.model.*;
 import br.com.bookrestaurant.utilsbytests.Util;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -43,6 +41,12 @@ class DataBaseJpaTest {
 
     @Mock
     private EvaluateRepository evaluateRepository;
+
+    @Mock
+    private ClientRepository clientRepository;
+
+    @Mock
+    private ReserveRepository reserveRepository;
 
     private AutoCloseable mocks;
 
@@ -177,6 +181,32 @@ class DataBaseJpaTest {
             EvaluateEntity evaluateEntity = dataBase.registryEvaluate(Util.buildEvaluateEntity());
             assertThat(evaluateEntity).isNotNull().isInstanceOf(EvaluateEntity.class);
             assertThat(evaluateEntity.getEvaluateId()).isNotNull().isInstanceOf(UUID.class);
+        }
+    }
+
+    @Nested
+    class RegisterReserve {
+        @Test
+        @Severity(SeverityLevel.BLOCKER)
+        void testShouldRegisterReserve() {
+            ReserveModel reserveModel = new ReserveModel(Util.buildReserveEntitySaved());
+            reserveModel.setId(Util.getUUID());
+            when(reserveRepository.save(Mockito.any(ReserveModel.class)))
+                    .thenReturn(reserveModel);
+            ReserveEntity reserveEntity = dataBase
+                    .registerReserve(Util.buildReserveEntity());
+            verify(reserveRepository, times(1))
+                    .save(Mockito.any(ReserveModel.class));
+            assertThat(reserveEntity).isNotNull().isInstanceOf(ReserveEntity.class);
+            assertThat(reserveEntity.getId()).isNotNull().isEqualTo(Util.getUUID());
+        }
+
+        @Test
+        @Severity(SeverityLevel.BLOCKER)
+        void shouldRegisterClient() {
+            dataBase.registerClient(Util.buildClient(), Util.getUUID());
+            verify(clientRepository, times(1))
+                    .save(Mockito.any(ClientModel.class));
         }
     }
 

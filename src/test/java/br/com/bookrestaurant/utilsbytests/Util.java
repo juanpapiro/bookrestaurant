@@ -2,19 +2,21 @@ package br.com.bookrestaurant.utilsbytests;
 
 import br.com.bookrestaurant.entity.evaluate.EvaluateEntity;
 import br.com.bookrestaurant.entity.evaluate.EvaluateEntityBuilder;
+import br.com.bookrestaurant.entity.reserve.Client;
+import br.com.bookrestaurant.entity.reserve.ReserveEntity;
+import br.com.bookrestaurant.entity.reserve.ReserveEntityBuilder;
 import br.com.bookrestaurant.entity.restaurant.Address;
 import br.com.bookrestaurant.entity.restaurant.OpeningHour;
 import br.com.bookrestaurant.entity.restaurant.RestaurantEntity;
 import br.com.bookrestaurant.entity.restaurant.RestaurantEntityBuilder;
-import br.com.bookrestaurant.external.dto.AddressDto;
-import br.com.bookrestaurant.external.dto.EvaluateDto;
-import br.com.bookrestaurant.external.dto.OpeningHourDto;
-import br.com.bookrestaurant.external.dto.RestaurantDto;
+import br.com.bookrestaurant.external.dto.*;
 import br.com.bookrestaurant.external.model.AddressModel;
 import br.com.bookrestaurant.external.model.EvaluateModel;
 import br.com.bookrestaurant.external.model.OpeningHourModel;
 import br.com.bookrestaurant.external.model.RestaurantModel;
 import br.com.bookrestaurant.infraestructure.presenter.evaluate.EvaluateRecord;
+import br.com.bookrestaurant.infraestructure.presenter.reserve.ClientRecord;
+import br.com.bookrestaurant.infraestructure.presenter.reserve.ReserveRecord;
 import br.com.bookrestaurant.infraestructure.presenter.restaurant.AddressRecord;
 import br.com.bookrestaurant.infraestructure.presenter.restaurant.OpeningHourRecord;
 import br.com.bookrestaurant.infraestructure.presenter.restaurant.RestaurantRecord;
@@ -181,6 +183,47 @@ public class Util {
         evaluateDto.setComment("Muito bom");
         evaluateDto.setRestaurantId(UUID.fromString(restaurantId));
         return evaluateDto;
+    }
+
+    public static Client buildClient() {
+        return new Client("João", 998648471);
+    }
+
+    public static ReserveEntity buildReserve() {
+        return new ReserveEntity(UUID.fromString("ba94f4d5-b0a6-4745-adac-1456619ecca8"),
+                LocalDateTime.now(), 4, "A");
+    }
+
+    public static ReserveEntity buildReserveEntity() {
+        return new ReserveEntity(UUID.fromString("ba94f4d5-b0a6-4745-adac-1456619ecca8"),
+                LocalDateTime.now(), 4, "A");
+    }
+
+    public static ReserveEntity buildReserveEntitySaved() {
+        ReserveEntity reserveEntity = new ReserveEntityBuilder()
+                .addInfos(UUID.fromString("ba94f4d5-b0a6-4745-adac-1456619ecca8"),
+                        LocalDateTime.now(), 4, "A")
+                .addClient(buildClient())
+                .build();
+        reserveEntity.setId(getUUID());
+        return reserveEntity;
+    }
+
+    public static ReserveRecord buildReserveRecord() {
+        return new ReserveRecord(UUID.fromString("ba94f4d5-b0a6-4745-adac-1456619ecca8"),
+                LocalDateTime.now(), 4, "A");
+    }
+
+    public static ClientRecord buildClientRecord() {
+        return new ClientRecord("João", 984488778);
+    }
+
+    public static ReserveDto buildReserveDtoRequest() {
+        ClientDto clientDto = new ClientDto(null, "João", 912341234);
+        return new ReserveDto(UUID.fromString("ba94f4d5-b0a6-4745-adac-1456619ecca8"),
+                UUID.fromString("ba94f4d5-b0a6-4745-adac-1456619ecca8"),
+                LocalDateTime.now(), 4, "A",
+                clientDto);
     }
 
 }

@@ -39,16 +39,17 @@ public class ErrorsHandlerConfig {
         log.error(ex);
         return ResponseEntity.badRequest().body(new ErrorApi(ex.getMessage()));
     }
-    @ExceptionHandler(EvaluateInvalidException.class)
-    public ResponseEntity<ErrorApi> errorEvaluateInvalid(EvaluateInvalidException ex) {
-        log.error(ex);
-        return ResponseEntity.badRequest().body(new ErrorApi(ex.getMessage()));
-    }
 
     @ExceptionHandler(RestaurantNotFoundException.class)
     public ResponseEntity<ErrorApi> errorRestaurantNotFound(RestaurantNotFoundException ex) {
         log.error(ex);
         return ResponseEntity.notFound().build();
+    }
+
+    @ExceptionHandler(EvaluateInvalidException.class)
+    public ResponseEntity<ErrorApi> errorEvaluateInvalid(EvaluateInvalidException ex) {
+        log.error(ex);
+        return ResponseEntity.badRequest().body(new ErrorApi(ex.getMessage()));
     }
 
     @ExceptionHandler(ReserveInvalidException.class)
@@ -58,13 +59,13 @@ public class ErrorsHandlerConfig {
     }
 
     @ExceptionHandler(ReserveNotFoundException.class)
-    public ResponseEntity<ErrorApi> errorReserveNotFound(ReserveNotFoundException ex) {
+    public ResponseEntity<ErrorApi> errorReserveNorFound(ReserveNotFoundException ex) {
         log.error(ex);
         return ResponseEntity.notFound().build();
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<ErrorApi> errorRestaurant(Exception ex) {
+    public ResponseEntity<ErrorApi> error(Exception ex) {
         log.error(ex);
         return ResponseEntity.internalServerError().build();
     }
