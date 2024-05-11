@@ -6,7 +6,6 @@
     <artifactId>bookrestaurant</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
-
     <name>bookrestaurant</name>
     <url>http://maven.apache.org</url>
 
