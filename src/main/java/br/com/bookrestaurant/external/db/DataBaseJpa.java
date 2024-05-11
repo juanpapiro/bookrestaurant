@@ -1,18 +1,18 @@
 package br.com.bookrestaurant.external.db;
 
 import br.com.bookrestaurant.entity.evaluate.EvaluateEntity;
+import br.com.bookrestaurant.entity.reserve.Client;
+import br.com.bookrestaurant.entity.reserve.ReserveEntity;
 import br.com.bookrestaurant.entity.restaurant.Address;
 import br.com.bookrestaurant.entity.restaurant.OpeningHour;
 import br.com.bookrestaurant.entity.restaurant.RestaurantEntity;
-import br.com.bookrestaurant.external.model.AddressModel;
-import br.com.bookrestaurant.external.model.EvaluateModel;
-import br.com.bookrestaurant.external.model.OpeningHourModel;
-import br.com.bookrestaurant.external.model.RestaurantModel;
+import br.com.bookrestaurant.external.model.*;
 import br.com.bookrestaurant.infraestructure.gateway.interfaces.IDataBase;
 import com.redis.E;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -22,20 +22,26 @@ public class DataBaseJpa implements IDataBase {
     private OpeningHourRepository openingHourRepository;
     private AddressRepository addressRepository;
     private RestaurantRepository restaurantRepository;
-
     private EvaluateRepository evaluateRepository;
+    private ClientRepository clientRepository;
+    private ReserveRepository reserveRepository;
 
     @Autowired
     public DataBaseJpa(
             OpeningHourRepository openingHourRepository,
             RestaurantRepository restaurantRepository,
             AddressRepository addressRepository,
-            EvaluateRepository evaluateRepository
+            EvaluateRepository evaluateRepository,
+            ClientRepository clientRepository,
+            ReserveRepository reserveRepository
+
     ) {
         this.openingHourRepository = openingHourRepository;
         this.addressRepository = addressRepository;
         this.restaurantRepository = restaurantRepository;
         this.evaluateRepository = evaluateRepository;
+        this.clientRepository = clientRepository;
+        this.reserveRepository = reserveRepository;
     }
 
     @Override
@@ -99,6 +105,34 @@ public class DataBaseJpa implements IDataBase {
         evaluateModel = evaluateRepository.save(evaluateModel);
         evaluateEntity.setEvaluateId(evaluateModel.getEvaluateId());
         return evaluateEntity;
+    }
+
+    @Override
+    public ReserveEntity registerReserve(ReserveEntity reserveEntity) {
+        ReserveModel reserveModel = new ReserveModel(reserveEntity);
+        reserveModel = reserveRepository.save(reserveModel);
+        reserveEntity.setId(reserveModel.getId());
+        return reserveEntity;
+    }
+
+    @Override
+    public Client registerClient(Client client, UUID reserveId) {
+        ClientModel clientModel = new ClientModel(client, reserveId);
+        clientRepository.save(clientModel);
+        return client;
+    }
+
+    @Override
+    public List<ReserveEntity> findReserveByRestaurantAndDate(UUID restaurantId,
+                                                              LocalDateTime date) {
+        List<ReserveModel> reserveModels = reserveRepository
+                .findByRestaurantAndDate(restaurantId, date);
+        return reserveModels.stream().map(ReserveModel::toEntity).toList();
+    }
+
+    @Override
+    public void updateStatus(UUID id, String status) {
+        reserveRepository.updateStatus(id, status);
     }
 
 }

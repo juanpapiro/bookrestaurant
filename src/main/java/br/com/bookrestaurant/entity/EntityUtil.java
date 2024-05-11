@@ -1,10 +1,12 @@
 package br.com.bookrestaurant.entity;
 
+import br.com.bookrestaurant.entity.reserve.Client;
 import br.com.bookrestaurant.entity.restaurant.Address;
 import br.com.bookrestaurant.entity.restaurant.OpeningHour;
 import br.com.bookrestaurant.entity.restaurant.RestaurantEntity;
 import br.com.bookrestaurant.entity.restaurant.exception.RestaurantInvalidException;
 
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
@@ -25,6 +27,9 @@ public class EntityUtil {
     public static LocalTime isNull(LocalTime value, String message) {
         return (LocalTime) execute(value, message);
     }
+    public static LocalDateTime isNull (LocalDateTime value, String message) {
+        return (LocalDateTime) execute(value, message);
+    }
     public static UUID isNull(UUID value, String message) {
         return (UUID) execute(value, message);
     }
@@ -41,6 +46,10 @@ public class EntityUtil {
 
     public static RestaurantEntity isNull(RestaurantEntity restaurantEntity, String message) {
         return (RestaurantEntity) execute(restaurantEntity, message);
+    }
+
+    public static Client isNull (Client value, String message) {
+        return (Client) execute(value, message);
     }
 
     private static Object execute(Object value, String message) {

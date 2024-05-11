@@ -1,6 +1,8 @@
 package br.com.bookrestaurant.external.config;
 
 import br.com.bookrestaurant.entity.evaluate.exception.EvaluateInvalidException;
+import br.com.bookrestaurant.entity.reserve.exception.ReserveInvalidException;
+import br.com.bookrestaurant.entity.reserve.exception.ReserveNotFoundException;
 import br.com.bookrestaurant.entity.restaurant.exception.RestaurantInvalidException;
 import br.com.bookrestaurant.entity.restaurant.exception.RestaurantNotFoundException;
 import br.com.bookrestaurant.external.dto.ErrorApi;
@@ -38,13 +40,25 @@ public class ErrorsHandlerConfig {
         return ResponseEntity.badRequest().body(new ErrorApi(ex.getMessage()));
     }
     @ExceptionHandler(EvaluateInvalidException.class)
-    public ResponseEntity<ErrorApi> errorRestaurantInvalid(EvaluateInvalidException ex) {
+    public ResponseEntity<ErrorApi> errorEvaluateInvalid(EvaluateInvalidException ex) {
         log.error(ex);
         return ResponseEntity.badRequest().body(new ErrorApi(ex.getMessage()));
     }
 
     @ExceptionHandler(RestaurantNotFoundException.class)
     public ResponseEntity<ErrorApi> errorRestaurantNotFound(RestaurantNotFoundException ex) {
+        log.error(ex);
+        return ResponseEntity.notFound().build();
+    }
+
+    @ExceptionHandler(ReserveInvalidException.class)
+    public ResponseEntity<ErrorApi> errorReserveInvalid(ReserveInvalidException ex) {
+        log.error(ex);
+        return ResponseEntity.badRequest().body(new ErrorApi(ex.getMessage()));
+    }
+
+    @ExceptionHandler(ReserveNotFoundException.class)
+    public ResponseEntity<ErrorApi> errorReserveNotFound(ReserveNotFoundException ex) {
         log.error(ex);
         return ResponseEntity.notFound().build();
     }
