@@ -10,11 +10,11 @@ integration-test:
 test: unit-test integration-test
 
 system-test:
-	@echo "iniciando teste de integração"
+	@echo "iniciando teste de sistema"
 	@mvn test -P sys-test
 
 start-app-system-test: start-app-docker
-	@echo "iniciando teste de integração"
+	@echo "iniciando teste de sistema"
 	@mvn test -P sys-test
 	@echo "Teste de sistema finalizado"
 	@echo "finalizando containers"
@@ -44,7 +44,7 @@ start: start-db start-app
 package:
 	mvn package
 
-docker-build: package
+docker-build: #package
 	docker build . -t bookrestaurant:test -f ./Dockerfile
 
 start-app-docker: docker-build
@@ -54,4 +54,5 @@ stop-app-docker:
 	docker-compose -f docker-compose-app.yml down
 
 allure-start:
+	@echo "Exibir relatorio de testes unitarios e integrados com allure-results"
 	allure serve target/allure-results

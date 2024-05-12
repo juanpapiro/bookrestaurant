@@ -10,6 +10,7 @@ import br.com.bookrestaurant.entity.restaurant.exception.RestaurantInvalidExcept
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -61,6 +62,12 @@ public class EntityUtil {
     public static List<OpeningHour> isNull(List<OpeningHour> value, String message) {
         return Optional.ofNullable(value)
                 .filter(l -> !l.isEmpty())
+                .orElseThrow(() -> new RestaurantInvalidException(message));
+    }
+
+    public static Map.Entry<String,String> isNull(Map<String,String> paramsLocale, String message) {
+        return paramsLocale.entrySet().stream().filter(el -> el.getValue() != null)
+                .findFirst()
                 .orElseThrow(() -> new RestaurantInvalidException(message));
     }
 

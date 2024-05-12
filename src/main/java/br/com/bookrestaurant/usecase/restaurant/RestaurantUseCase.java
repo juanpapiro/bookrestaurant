@@ -24,19 +24,15 @@ public class RestaurantUseCase {
     }
 
     private static void validAddress(Address address) {
-        Optional.ofNullable(address)
-                .orElseThrow(() -> new RestaurantInvalidException("Endereço é obrigatório"));
+        EntityUtil.isNull(address, "Endereço é obrigatório");
     }
 
     private static void validOpeningHours(List<OpeningHour> openingHours) {
-        Optional.ofNullable(openingHours)
-                .filter(l -> !l.isEmpty())
-                .orElseThrow(() -> new RestaurantInvalidException("Horário de funcionamento é obrigatório"));
-
-        if (openingHours.size() > 7)
+        EntityUtil.isNull(openingHours, "Horário de funcionamento é obrigatório");
+        if (openingHours != null && openingHours.size() > 7)
             throw new RestaurantInvalidException("Lista de horários de funcionamento deve conter no máximo 7 dias");
 
-        if (openingHours.size() != openingHours.stream().distinct().toList().size())
+        if (openingHours != null && openingHours.size() != openingHours.stream().distinct().toList().size())
             throw new RestaurantInvalidException("Lista de horários de funcionamento não deve conter dias repetidos");
     }
 
@@ -60,12 +56,10 @@ public class RestaurantUseCase {
         params.put("uf", uf);
         params.put("city", city);
         params.put("neighborhood", neighborhood);
-        params.entrySet().stream().filter(el -> el.getValue() != null)
-                .findFirst()
-                .orElseThrow(() -> new RestaurantInvalidException("UF ou cidade ou bairro deve ser informado."));
-        params.entrySet().forEach(el -> {
-            el.setValue(el.getValue() == null ? "" : el.getValue().trim().toLowerCase());
-        });
+        EntityUtil.isNull(params, "UF ou cidade ou bairro deve ser informado.");
+        params.entrySet().forEach(el ->
+            el.setValue(el.getValue() == null ? "" : el.getValue().trim().toLowerCase())
+        );
         return params;
     }
 
@@ -75,12 +69,14 @@ public class RestaurantUseCase {
 
     private static String validParam(String value, int size, String message) {
         return Optional.ofNullable(value)
-                .map(v -> v.trim())
+                .map(String::trim)
                 .filter(v -> !v.isBlank())
                 .filter(v -> v.length() >= size)
-                .map(v -> v.toLowerCase())
+                .map(String::toLowerCase)
                 .orElseThrow(() -> new RestaurantInvalidException(message));
     }
 
-
+    private RestaurantUseCase() {
+        throw new IllegalStateException("Class util not instance.");
+    }
 }
