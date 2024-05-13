@@ -27,10 +27,10 @@ public class ErrorsHandlerConfig {
     public ResponseEntity<ErrorApi> errorArgumentsNotValid(MethodArgumentNotValidException ex) {
         log.error(ex);
         ErrorApi errorApi = new ErrorApi("Request com argumento(s) inválido(s).");
-        ex.getBindingResult().getFieldErrors().forEach(error -> {
+        ex.getBindingResult().getFieldErrors().forEach(error ->
             errorApi.addError(new FieldError(error.getField(),
-                    messageSource.getMessage(error, LocaleContextHolder.getLocale())));
-        });
+                    messageSource.getMessage(error, LocaleContextHolder.getLocale())))
+        );
         return ResponseEntity.badRequest().body(errorApi);
     }
 

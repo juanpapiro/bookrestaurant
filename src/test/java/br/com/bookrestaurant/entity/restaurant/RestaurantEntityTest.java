@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
-public class RestaurantEntityTest {
+class RestaurantEntityTest {
 
     @Test
     void testShouldPermitBuildRestaurantEntity() {

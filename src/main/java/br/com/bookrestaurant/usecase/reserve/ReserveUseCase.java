@@ -1,5 +1,6 @@
 package br.com.bookrestaurant.usecase.reserve;
 
+import br.com.bookrestaurant.entity.EntityUtil;
 import br.com.bookrestaurant.entity.reserve.Client;
 import br.com.bookrestaurant.entity.reserve.ReserveEntity;
 import br.com.bookrestaurant.entity.reserve.ReserveEntityBuilder;
@@ -18,8 +19,8 @@ public class ReserveUseCase {
                 .build();
     }
 
-    public static void validClient(Client client) {
-        Optional.ofNullable(client)
+    public static Client validClient(Client client) {
+        return Optional.ofNullable(client)
                 .orElseThrow(() -> new ReserveInvalidException("Cliente é obrigatório"));
     }
 
@@ -27,9 +28,7 @@ public class ReserveUseCase {
         Map<String, Object> params = new HashMap<>();
         params.put("restaurantId", restaurantId);
         params.put("date", date);
-        params.entrySet().stream().filter(el -> el.getValue() != null)
-                .findFirst()
-                .orElseThrow(() -> new ReserveInvalidException("Restaurante e data data devem ser informado."));
+        EntityUtil.isNullReserve(params, "Restaurante e data data devem ser informado.");
         return params;
     }
 
@@ -43,10 +42,12 @@ public class ReserveUseCase {
         Map<String, Object> params = new HashMap<>();
         params.put("id", id);
         params.put("status", status);
-        params.entrySet().stream().filter(el -> el.getValue() != null)
-                .findFirst()
-                .orElseThrow(() -> new ReserveInvalidException("Situação da reserva dev ser informada."));
+        EntityUtil.isNullReserve(params, "Situação da reserva dev ser informada.");
         return params;
+    }
+
+    protected ReserveUseCase() {
+        throw new IllegalStateException("Class util not instanec.");
     }
 
 }

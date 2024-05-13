@@ -9,7 +9,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 
-public class ClientTest {
+class ClientTest {
     @Test
     void testShouldPermitRegisterClientOfReserve() {
         Client client = Util.buildClient();

@@ -14,6 +14,7 @@ import org.mockito.MockitoAnnotations;
 
 import java.util.UUID;
 
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.mockito.Mockito.when;
 
 class EvaluateControllerTest {
@@ -46,6 +47,7 @@ class EvaluateControllerTest {
                     .thenReturn(Util.buildEvaluateEntity());
             EvaluateEntity evaluateEntity = evaluateController
                     .register(Util.buildEvaluateRecord(), database);
+            assertThat(evaluateEntity).isNotNull().isInstanceOf(EvaluateEntity.class);
         }
     }
 

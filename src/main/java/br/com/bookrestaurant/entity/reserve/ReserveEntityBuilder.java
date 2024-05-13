@@ -3,7 +3,6 @@ package br.com.bookrestaurant.entity.reserve;
 import br.com.bookrestaurant.entity.reserve.exception.ReserveInvalidException;
 
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.Optional;
 import java.util.UUID;
 

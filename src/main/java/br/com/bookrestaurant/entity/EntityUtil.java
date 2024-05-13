@@ -70,6 +70,11 @@ public class EntityUtil {
                 .findFirst()
                 .orElseThrow(() -> new RestaurantInvalidException(message));
     }
+    public static Map.Entry<String,Object> isNullReserve(Map<String,Object> params, String message) {
+        return params.entrySet().stream().filter(el -> el.getValue() != null)
+                .findFirst()
+                .orElseThrow(() -> new ReserveInvalidException(message));
+    }
 
     public static RestaurantEntity isNull(RestaurantEntity restaurantEntity, String message) {
         return (RestaurantEntity) execute(restaurantEntity, message);
@@ -91,7 +96,7 @@ public class EntityUtil {
         }
     }
 
-    private EntityUtil() {
+    protected EntityUtil() {
         throw new IllegalStateException("Class util not instance");
     }
 }

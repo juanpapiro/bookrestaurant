@@ -76,7 +76,7 @@ public class RestaurantUseCase {
                 .orElseThrow(() -> new RestaurantInvalidException(message));
     }
 
-    private RestaurantUseCase() {
+    protected RestaurantUseCase() {
         throw new IllegalStateException("Class util not instance.");
     }
 }

@@ -7,10 +7,10 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
-public class ReserveTest {
+class ReserveEntityTest {
 
     @Test
     void testShouldPermitBuildReserveEntity() {
@@ -41,5 +41,19 @@ public class ReserveTest {
                 LocalDateTime.now(), 4, null))
                 .isInstanceOf(ReserveInvalidException.class)
                 .hasMessage("Situação da reserva é obrigatória");
+    }
+
+    @Test
+    void testSets() {
+        ReserveEntity entity = Util.buildReserve();
+        entity.setDate(LocalDateTime.of(2024,10,10,10,39,59));
+        entity.setStatus("F");
+        entity.setSeats(2);
+        entity.setRestaurantId(Util.getUUID());
+        assertThat(entity).isNotNull().isInstanceOf(ReserveEntity.class);
+        assertThat(entity.getDate()).isEqualTo(LocalDateTime.of(2024,10,10,10,39,59));
+        assertThat(entity.getStatus()).isEqualTo("F");
+        assertThat(entity.getSeats()).isEqualTo(2);
+        assertThat(entity.getRestaurantId()).isNotNull().isInstanceOf(UUID.class);
     }
 }

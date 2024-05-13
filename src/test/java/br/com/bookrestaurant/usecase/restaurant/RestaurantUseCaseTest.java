@@ -7,6 +7,7 @@ import br.com.bookrestaurant.utilsbytests.Util;
 import br.com.bookrestaurant.entity.restaurant.exception.RestaurantInvalidException;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
@@ -156,6 +157,11 @@ public class RestaurantUseCaseTest {
                     .isEqualTo(Util.getUUID());
         }
 
+    }
+
+    @Test
+    void testInstance() {
+        Assertions.assertThrows(IllegalStateException.class, () -> new RestaurantUseCase());
     }
 
 }

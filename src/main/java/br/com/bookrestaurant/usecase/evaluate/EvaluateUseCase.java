@@ -31,4 +31,8 @@ public class EvaluateUseCase {
         }
     }
 
+    protected EvaluateUseCase() {
+        throw new IllegalStateException("Class util not inscance.");
+    }
+
 }

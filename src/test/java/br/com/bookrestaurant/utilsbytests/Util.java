@@ -10,10 +10,7 @@ import br.com.bookrestaurant.entity.restaurant.OpeningHour;
 import br.com.bookrestaurant.entity.restaurant.RestaurantEntity;
 import br.com.bookrestaurant.entity.restaurant.RestaurantEntityBuilder;
 import br.com.bookrestaurant.external.dto.*;
-import br.com.bookrestaurant.external.model.AddressModel;
-import br.com.bookrestaurant.external.model.EvaluateModel;
-import br.com.bookrestaurant.external.model.OpeningHourModel;
-import br.com.bookrestaurant.external.model.RestaurantModel;
+import br.com.bookrestaurant.external.model.*;
 import br.com.bookrestaurant.infraestructure.presenter.evaluate.EvaluateRecord;
 import br.com.bookrestaurant.infraestructure.presenter.reserve.ClientRecord;
 import br.com.bookrestaurant.infraestructure.presenter.reserve.ReserveRecord;
@@ -224,6 +221,17 @@ public class Util {
                 UUID.fromString("ba94f4d5-b0a6-4745-adac-1456619ecca8"),
                 LocalDateTime.now(), 4, "A",
                 clientDto);
+    }
+
+    public static ReserveModel buildReserveModel(UUID id, LocalDateTime date) {
+        ReserveModel reserveModel = new ReserveModel();
+        reserveModel.setId(id);
+        reserveModel.setRestaurantId(UUID.randomUUID());
+        reserveModel.setDate(date);
+        reserveModel.setSeats(4);
+        reserveModel.setStatus("A");
+        reserveModel.setClient(new ClientModel(buildClient(), UUID.randomUUID()));
+        return reserveModel;
     }
 
 }

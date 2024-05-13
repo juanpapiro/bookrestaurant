@@ -6,6 +6,8 @@ import br.com.bookrestaurant.entity.restaurant.Address;
 import br.com.bookrestaurant.entity.restaurant.OpeningHour;
 import br.com.bookrestaurant.entity.restaurant.exception.RestaurantInvalidException;
 import br.com.bookrestaurant.utilsbytests.Util;
+import org.apache.http.annotation.Contract;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
@@ -82,4 +84,10 @@ class EntityUtilTest {
         assertThatThrownBy(() -> EntityUtil.isNull(client, ""))
                 .isInstanceOf(ReserveInvalidException.class);
     }
+
+    @Test
+    void testInstance() {
+        Assertions.assertThrows(IllegalStateException.class, () -> new EntityUtil());
+    }
+
 }

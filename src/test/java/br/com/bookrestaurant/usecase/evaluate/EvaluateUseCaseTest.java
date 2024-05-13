@@ -4,6 +4,7 @@ import br.com.bookrestaurant.entity.evaluate.EvaluateEntity;
 import br.com.bookrestaurant.entity.evaluate.exception.EvaluateInvalidException;
 import br.com.bookrestaurant.entity.restaurant.RestaurantEntity;
 import br.com.bookrestaurant.utilsbytests.Util;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -33,6 +34,11 @@ class EvaluateUseCaseTest {
         assertThatThrownBy(() -> EvaluateUseCase.register("Muito Bom", 6, Util.getUUID(), Util.buildRestaurantEntitySaved()))
                 .isInstanceOf(EvaluateInvalidException.class)
                 .hasMessage("Nota de avaliação deve ser de 1 a 5");
+    }
+
+    @Test
+    void testInstance() {
+        Assertions.assertThrows(IllegalStateException.class, () -> new EvaluateUseCase());
     }
 
 }
