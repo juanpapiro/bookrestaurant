@@ -2,8 +2,6 @@ package br.com.bookrestaurant.entity.restaurant;
 
 import br.com.bookrestaurant.entity.EntityUtil;
 
-import java.util.Optional;
-
 public class Address {
 
     private String street;

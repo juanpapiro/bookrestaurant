@@ -16,6 +16,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -207,6 +208,30 @@ class DataBaseJpaTest {
             dataBase.registerClient(Util.buildClient(), Util.getUUID());
             verify(clientRepository, times(1))
                     .save(Mockito.any(ClientModel.class));
+        }
+    }
+
+    @Nested
+    class FindReserve {
+        @Test
+        void testFindReserveByRestaurantAndDate() {
+            LocalDateTime date = LocalDateTime.of(2024,5,13,10,11,12);
+            when(reserveRepository.findByRestaurantAndDate(
+                    Mockito.any(UUID.class), Mockito.any(LocalDateTime.class)))
+                .thenReturn(Arrays.asList(Util.buildReserveModel(Util.getUUID(), date)));
+            List<ReserveEntity> reserves = dataBase.findReserveByRestaurantAndDate(Util.getUUID(), date);
+            assertThat(reserves).isNotNull().isInstanceOf(List.class);
+            assertThat(reserves.size()).isEqualTo(1);
+        }
+    }
+
+    @Nested
+    class UpdateReserve {
+        @Test
+        void testUpdateStatus() {
+            dataBase.updateStatus(Util.getUUID(), "F");
+            verify(reserveRepository, times(1))
+                    .updateStatus(Mockito.any(UUID.class), Mockito.anyString());
         }
     }
 

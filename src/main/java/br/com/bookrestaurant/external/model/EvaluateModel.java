@@ -1,7 +1,6 @@
 package br.com.bookrestaurant.external.model;
 
 import br.com.bookrestaurant.entity.evaluate.EvaluateEntity;
-import com.redis.R;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

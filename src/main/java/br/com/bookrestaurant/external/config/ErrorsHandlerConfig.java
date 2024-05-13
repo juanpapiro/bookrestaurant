@@ -59,7 +59,7 @@ public class ErrorsHandlerConfig {
     }
 
     @ExceptionHandler(ReserveNotFoundException.class)
-    public ResponseEntity<ErrorApi> errorReserveNorFound(ReserveNotFoundException ex) {
+    public ResponseEntity<ErrorApi> errorReserveNotFound(ReserveNotFoundException ex) {
         log.error(ex);
         return ResponseEntity.notFound().build();
     }

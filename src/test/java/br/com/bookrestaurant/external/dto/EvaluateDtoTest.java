@@ -1,4 +1,4 @@
-package br.com.bookrestaurant.external.model;
+package br.com.bookrestaurant.external.dto;
 
 import br.com.bookrestaurant.external.dto.EvaluateDto;
 import br.com.bookrestaurant.utilsbytests.Util;
@@ -37,6 +37,15 @@ class EvaluateDtoTest {
         assertThat(evaluateDto.getEvaluation()).isEqualTo(5);
         assertThat(evaluateDto.getRestaurantId()).isEqualTo(Util.getUUID());
         assertThat(evaluateDto.getDateCreate()).isEqualTo(LocalDateTime.of(2024,10,2,10,12,15));
+    }
+
+    @Test
+    void testInstance() {
+        EvaluateDto evaluateDto = new EvaluateDto("Legal", 4, Util.getUUID());
+        assertThat(evaluateDto).isNotNull().isInstanceOf(EvaluateDto.class);
+        assertThat(evaluateDto.getComment()).isEqualTo("Legal");
+        assertThat(evaluateDto.getEvaluation()).isEqualTo(4);
+        assertThat(evaluateDto.getRestaurantId()).isEqualTo(Util.getUUID());
     }
 
 }

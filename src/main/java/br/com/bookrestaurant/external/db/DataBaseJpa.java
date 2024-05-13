@@ -8,7 +8,6 @@ import br.com.bookrestaurant.entity.restaurant.OpeningHour;
 import br.com.bookrestaurant.entity.restaurant.RestaurantEntity;
 import br.com.bookrestaurant.external.model.*;
 import br.com.bookrestaurant.infraestructure.gateway.interfaces.IDataBase;
-import com.redis.E;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

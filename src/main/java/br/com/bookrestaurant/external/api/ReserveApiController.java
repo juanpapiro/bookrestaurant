@@ -5,7 +5,6 @@ import br.com.bookrestaurant.entity.reserve.ReserveEntity;
 import br.com.bookrestaurant.external.db.DataBaseJpa;
 import br.com.bookrestaurant.external.dto.ReserveDto;
 import br.com.bookrestaurant.infraestructure.controller.ReserveController;
-import com.sun.net.httpserver.HttpsServer;
 import jakarta.validation.Valid;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;

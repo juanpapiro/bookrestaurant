@@ -23,12 +23,17 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
+import java.time.LocalDateTime;
+import java.util.Arrays;
+import java.util.UUID;
+
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 import static org.mockito.Mockito.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 
@@ -93,6 +98,34 @@ public class ReserveApiControllerTest {
                             .contentType(MediaType.APPLICATION_JSON))
             ).isInstanceOf(Exception.class)
                     .hasMessageContaining("Nome do Cliente é obrigatório");
+        }
+    }
+
+    @Nested
+    class UpdateReserve {
+        @Test
+        void testUpdateStatus() throws Exception {
+            mockMvc.perform(put(ENDPOINT)
+                    .queryParam("id", Util.getUUID().toString())
+                    .queryParam("status", "F"))
+                            .andExpect(status().is2xxSuccessful());
+            verify(reserveController, times(1)).updateStatus(Mockito.any(UUID.class), Mockito.anyString(), Mockito.any(IDataBase.class));
+        }
+    }
+
+    @Nested
+    class FindReserve {
+        @Test
+        void testFindByRestaurantAndDate() throws Exception {
+            when(reserveController.findByRestaurantAndDate(Mockito.any(UUID.class),
+                    Mockito.any(LocalDateTime.class), Mockito.any(IDataBase.class)))
+                    .thenReturn(Arrays.asList(Util.buildReserveEntitySaved()));
+            mockMvc.perform(get(ENDPOINT + "/by-restaurant-and-date")
+                    .queryParam("restaurantId", Util.getUUID().toString())
+                    .queryParam("date", "2024-05-13T10:11:12"))
+                    .andExpect(status().is2xxSuccessful());
+            verify(reserveController, times(1)).findByRestaurantAndDate(Mockito.any(UUID.class),
+                    Mockito.any(LocalDateTime.class), Mockito.any(IDataBase.class));
         }
     }
 
